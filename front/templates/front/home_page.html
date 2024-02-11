@@ -1,0 +1,246 @@
+{% extends "front/base2.html" %}
+{% block breaking_news %}
+    {% if page.get_breaking_news %}
+    <div class="breakingnews-wrapper hidden-xs">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
+                    <div class="breakingnews clearfix fix">
+                        <div class="bn-title">
+                            <h6>خبرهای داغ</h6>
+                        </div>
+                        <div class="news-wrap">
+                            <ul class="bkn clearfix" id="bkn">                            
+                                {% for n in page.get_breaking_news %}
+                                    <li><a href="{{n.get_url}}">{{n.title}}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    <!-- Breaking news end-->
+{% endblock %}
+{% block top_posts %}
+  {% include 'front/top_posts2.html' %}
+{% endblock %}
+{% load static navigation_tags wagtailcore_tags wagtailimages_tags %}
+{% block content %}
+<!-- Ad2 start -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12 header-mdh">
+            <div class="global-table">
+                <div class="global-row">
+                    <div class="global-cell">
+                        <div class="advertisement text-left">
+                            {% if settings.front.PromotionSettings.home1_script %}
+                                {{ settings.front.PromotionSettings.home1_script }}
+                            {% elif settings.front.PromotionSettings.home1_img %}
+                                <a href="{{ settings.front.PromotionSettings.home1_url }}" target="_blank">{% image settings.front.PromotionSettings.home1_img width-770 %}</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12 header-mdh">
+            <div class="global-table">
+                <div class="global-row">
+                    <div class="global-cell">
+                        <div class="advertisement text-left">
+                            {% if settings.front.PromotionSettings.home2_script %}
+                                {{ settings.front.PromotionSettings.home2_script }}
+                            {% elif settings.front.PromotionSettings.home2_img %}
+                                <a href="{{ settings.front.PromotionSettings.home2_url }}" target="_blank">{% image settings.front.PromotionSettings.home2_img width-770 %}</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Ad2 end -->
+<section id="page-content" class="page-wrapper">
+{% if page.get_editors_choice %}
+    <div class="zm-section bg-gray ptb-70">
+        <div class="container">
+            <div class="row mb-40">
+                <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
+                    <div class="section-title">
+                        <h2 class="h6 header-color inline-block uppercase">پیشنهاد سردبیر</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5 col-sm-12 col-xs-12 col-lg-6 pull-right">
+                    <div class="zm-posts">
+                        {% show_post_in_editors_choice page.get_editors_choice.0 True %}
+                    </div>
+                </div>
+                <div class="col-md-7 col-sm-12 col-xs-12 col-lg-6 pull-right">
+                    <div class="zm-posts">
+                        <!-- Start single post layout D -->
+                        {% if page.get_editors_choice.1 %}
+                            {% show_post_in_editors_choice page.get_editors_choice.1 %}
+                        {% endif %}
+                        {% if page.get_editors_choice.2 %}
+                            {% show_post_in_editors_choice page.get_editors_choice.2 %}
+                        {% endif %}
+                        {% if page.get_editors_choice.3 %}
+                            {% show_post_in_editors_choice page.get_editors_choice.3 %}
+                        {% endif %}
+                        {% if page.get_editors_choice.4 %}
+                            {% show_post_in_editors_choice page.get_editors_choice.4 %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+<!-- ---------------------- SERVICES ------------------------------------ -->
+    {% if page.show_services %}
+    {% if page.get_services %}
+    <div class="zm-section bg-white ptb-70">
+        <div class="container">
+            <div class="row">
+                <!-- Start left side -->
+                    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 pull-right">
+                        <div class="row mb-40">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="section-title">
+                                    <h2 class="h6 header-color inline-block uppercase">خدمات فیسیت</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="zm-posts clearfix trends24">
+                                <!-- Start single post layout B -->
+                                    {% for service in page.get_services %}
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                                        <article class="zm-trending-post zm-lay-a1 zm-single-post" data-effict-zoom="1">
+                                            <div class="zm-post-thumb">
+                                                <a href="{{ service.get_url }}" data-dark-overlay="2.5" data-scrim-bottom="9">{% image service.image fill-420x270 %}</a>
+                                            </div>
+                                            <div class="zm-post-dis text-white">
+                                                <h2 class="zm-post-title h3"><a href="{{ service.get_url }}">{{ service.title }}</a></h2>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    {% endfor %}
+                                    <!-- End single post layout B -->
+                                </div>
+                            </div>
+                            <!-- Start Advertisement -->
+                            <div class="advertisement">
+                                <div class="row mt-40">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                                        {% if settings.front.PromotionSettings.home3_script %}
+                                            {{ settings.front.PromotionSettings.home3_script }}
+                                        {% elif settings.front.PromotionSettings.home3_img %}
+                                            <a href="{{ settings.front.PromotionSettings.home3_url }}" target="_blank">{% image settings.front.PromotionSettings.home3_img width-770 %}</a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Advertisement -->
+                        </div>
+                        <!-- End left side -->
+                        <!-- Start Righr side -->
+                        <div class="col-xs-12 col-sm-12 hidden-sm col-md-4 col-lg-4 pull-right">
+                            <!-- Start post layout E -->
+                            <aside class="zm-post-lay-e-area">
+                                <div class="row mb-40">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="section-title">
+                                            <h2 class="h6 header-color inline-block uppercase">مطالب بحث برانگیز</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="zm-posts">
+                                            <!-- Start single post layout E -->
+                                            {% if page.get_hot_posts %}
+                                            {% for post in page.get_hot_posts %}
+                                                {% show_post_in_sidebar post %}
+                                            {% endfor %}
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </aside>
+                            <!-- Start post layout E -->
+                            <!-- Start Day News -->
+                            <aside class="zm-post-lay-a-area  hidden-sm">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        {% if settings.front.PromotionSettings.left_top_script %}
+                                            {{ settings.front.PromotionSettings.left_top_script }}
+                                        {% elif settings.front.PromotionSettings.left_top_img %}
+                                            <a href="{{ settings.front.PromotionSettings.left_top_url }}" target="_blank">{% image settings.front.PromotionSettings.left_top_img width-330 %}</a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </aside>
+                            <!-- Start Day News -->
+                        </div>
+                        <!-- End Right side -->
+                    </div>
+                </div>
+            </div>
+    {% endif %}
+    {% endif %}
+<!-- ------------------------- END OF SERVICES ----------------------------------- -->
+    {% include "front/video_list.html" %}
+<!-- ------------------------------------------- End of video ------------------- -->
+    <div class="zm-section bg-white pt-30 xs-pt-30 sm-pt-30 pb-40">
+        <div class="container">
+            <div class="row">
+                {% include 'front/home_post_list.html' %}
+                {% include 'front/home_sidebar.html'%}
+            </div>
+            <div class="row hidden-xs">
+                <div class="zm-pagination-wrap mt-70">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <nav class="zm-pagination ptb-40 text-center">
+                                    <ul class="page-numbers">
+                                        {% if posts.has_previous %}
+                                            <li><a class="prev  page-numbers" href="?page={{ posts.paginator.previous_page_number }}" >قبلی</a></li>
+                                        {% endif %}
+                                        {% for page_num in page_range %}
+                                            <li>{% if page_num != posts.number %}<a class="page-numbers" href="?page={{ page_num }}">{{ page_num }}</a>
+                                            {% else %}
+                                            <span class="page-numbers current">{{ page_num }}</span>{% endif %}</li>
+                                        {% endfor %}
+                                        {% if posts.has_next %}
+                                            <li><a class="next  page-numbers" href="?page={{ posts.next_page_number }}">بعدی</a></li>
+                                        {% endif %}
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% if settings.front.PromotionSettings.bottom_script %}
+                    {{ settings.front.PromotionSettings.bottom_script }}
+            {% elif settings.front.PromotionSettings.bottom_img %}
+                <div class="advertisement">
+                    <div class="row mt-40">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                            <a href="{{ settings.front.PromotionSettings.bottom_url }}">{% image settings.front.PromotionSettings.bottom_img width-770 %}</a>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

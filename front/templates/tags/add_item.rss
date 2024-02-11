@@ -1,0 +1,6 @@
+ <item>
+    <title>{{ title }}</title>
+    <link>https://faceit.ir{{ link }}</link>
+    <description> {{ description }} </description>
+    <guid>https://faceit.ir{{ link }}</guid>
+</item>

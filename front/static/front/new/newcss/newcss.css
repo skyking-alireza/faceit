@@ -1,0 +1,371 @@
+.header-fixed {
+    box-shadow: 0 1px 1px #ccc;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    top: -100px;
+    -webkit-transition: top 0.3s;
+    transition: top 0.3s;
+}
+
+
+/* Logo */
+
+.header-color {
+    color: #ffffff;
+}
+
+.header-fixed h1 {
+    float: right;
+    line-height: 40px;
+    margin: 0;
+    color: #ffffff;
+}
+
+
+/* The navigation links */
+
+.header-fixed a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.header-fixed nav {
+    line-height: 40px;
+    float: right;
+}
+
+.header-fixed nav a {
+    display: inline-block;
+    padding: 0 5px;
+}
+
+.header-fixed nav a:hover {
+    opacity: 1;
+}
+
+.header-fixed nav a.selected {
+    color: #608bd2;
+    pointer-events: none;
+    opacity: 1;
+}
+
+
+/* Making the header responsive */
+
+@media all and (max-width: 600px) {
+    .header-fixed {
+        padding: 20px 0;
+    }
+    .header-fixed h1 {
+        float: none;
+        margin: -8px 0 10px;
+        text-align: center;
+        font-size: 24px;
+        line-height: 1;
+    }
+    .header-fixed nav {
+        line-height: 1;
+        float: none;
+    }
+    .header-fixed nav a {
+        font-size: 13px;
+    }
+}
+
+
+/*
+	 We are clearing the body's margin and padding, so that the header fits properly.
+	 We are also adding a height to demonstrate the scrolling behavior. You can remove
+	 these styles.
+ */
+
+
+/*
+    @@ remove body height
+*/
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 1500px;
+}
+
+.aparat {
+    background-image: url('icon--white@16px.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 16;
+    background-color: transparent;
+    height: 16px;
+    top: 4px;
+    width: 16px;
+    position: relative;
+    border: none;
+    filter: grayscale(50) invert(0.3);
+}
+
+.aparat:hover {
+    background-image: url('icon--white@16px-hover.png');
+    filter: none;
+}
+
+
+/* The user menu */
+
+.header-user-menu {
+    background-color: #3a3c3e;
+    width: 75px;
+    height: 40px;
+    top: 15px;
+    border-radius: 2px;
+}
+
+.header-user-menu:before {
+    content: '';
+    width: 0;
+    height: 0;
+    top: 18px;
+    left: 15px;
+    position: absolute;
+    border: 5px solid transparent;
+    border-top-color: #fff;
+}
+
+.header-user-menu ul {
+    display: none;
+    background-color: inherit;
+    list-style: none;
+    position: absolute;
+    text-align: center;
+    width: 125px;
+    top: 25px;
+    right: 0;
+    padding: 10px;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.header-user-menu:active ul,
+.header-user-menu:hover ul,
+.header-user-menu.show ul {
+    display: block;
+}
+
+.header-user-menu ul li {
+    padding: 5px;
+}
+
+.header-user-menu ul li a:hover {
+    opacity: 0.9;
+}
+
+.header-user-menu ul li a.highlight {
+    color: #e9ac09;
+}
+
+.header-user-menu img {
+    border-radius: 50%;
+    position: absolute;
+    top: 6px;
+    max-width: 28px;
+    right: 10px;
+}
+
+.brand {
+    display: inline-block;
+}
+
+.brand img {
+    float: right;
+    max-width: 30px;
+    margin: 3px;
+}
+
+.brand h1 {
+    font-family: iransans-medium;
+    font-size: 30px;
+    display: inline;
+}
+
+.brand span {
+    font-size: 10px;
+    vertical-align: middle;
+    font-family: iransans;
+    color: #dddddd;
+    margin-right: 10px;
+}
+
+.header-top-menu {
+    text-align: center;
+}
+
+.header-top-menu a {
+    font-family: iransans-light;
+}
+
+.search-wrap.mobile-search .mobile-search-btn {
+    top: 15px;
+}
+
+.mean-container .mean-nav ul li a {
+    font-family: iransans-light;
+    font-size: 15px;
+    text-align: center;
+}
+
+@media (max-width: 767px) {
+    .header-mdh {
+        padding: 0;
+    }
+}
+
+.bkn a {
+    font-family: iransans;
+    font-size: 16px;
+    color: #333;
+}
+
+.bn-title h6 {
+    font-family: iransans-bold;
+}
+
+.zm-post-content p {
+    font-family: iransans;
+    color: #333;
+    font-size: 16px;
+}
+
+.zm-post-content .more {
+    font-family: iransans-bold;
+    color: #608bd2;
+}
+
+.zm-post-lay-a1 h2 {
+    text-align: center;
+}
+
+.zm-post-lay-e h2 {
+    font-family: iransans-medium;
+}
+
+@media all and (min-width: 992px) {
+    .second-row .h2 {
+        font-size: 15px;
+        line-height: 26px;
+    }
+}
+
+.zm-posts-tab-menu>.nav-tabs>li>a {
+    font-family: iransans;
+    font-size: 15px;
+}
+
+.zm-post-title {
+    font-size: 20px;
+}
+
+.trends24 img {
+    object-fit: cover;
+    width: 360px;
+    height: 270px;
+}
+
+.zm-post-content a {
+    color: #01aef0;
+}
+
+.zm-post-content p {
+    margin-top: 20px;
+}
+
+.zm-post-content h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: iransans;
+    padding-top: 20px;
+}
+
+
+.zm-post-content h1 {
+    font-size: 2.2em;
+}
+
+.zm-post-content h2 {
+    font-size: 2em;
+}
+
+.zm-post-content h3 {
+    font-size: 1.6em;
+}
+
+.zm-post-content h4 {
+    font-size: 1.4em;
+}
+
+.zm-post-content h5 {
+    font-size: 1.3em;
+}
+
+.zm-post-content h6 {
+    font-size: 1.1em;
+}
+
+.rich-text {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.zm-post-content blockquote p {
+    font-size: 14px;
+    font-family: iransans-light;
+}
+
+.bn-title h6 {
+    padding-top: 0px;
+}
+.top-container {
+    width: 95%;
+}
+
+
+.service-whatsapp {
+    background-color: #189d0e !important;
+}
+.service-telegram {
+    background-color: #64b4f5 !important;
+}
+.service-call {
+    direction: ltr;
+    background-color: #d3d3e1;
+    display: block;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+}
+.service-call strong {
+    font-size: 16px;
+    color:#202020;
+    margin: 5px;
+}
+.service-call a {
+    margin:5px;
+    display: block;
+    height: inherit;
+    background: transparent;
+}
+.service-call img {
+    padding:5px;
+    display: inline-block;
+    height: inherit;
+    background: transparent;
+}
+.zm-product-title {
+    font-size:20px;
+}
+.product-info p{
+    font-family: iransans;
+}

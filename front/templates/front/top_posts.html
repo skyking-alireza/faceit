@@ -1,0 +1,33 @@
+{% load static navigation_tags wagtailcore_tags wagtailimages_tags cache %}
+{% cache 900 top_posts %}
+<div class="trending-post-area">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="trend-post-list zm-lay-c-wrap zm-posts clearfix">
+                <!-- Start single trend post -->
+                <div class="col-md-6 col-sm-12 col-xs-12 p-0 pull-right">
+                    {% show_post_in_top_posts top_posts.0 True %}
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12 pull-right">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 p-0">
+                            {% show_post_in_top_posts top_posts.1 %}
+                        </div>
+                        <div class="col-md-6 col-sm-6 p-0">
+                            {% show_post_in_top_posts top_posts.2 %}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 p-0">
+                            {% show_post_in_top_posts top_posts.3 %}
+                        </div>
+                        <div class="col-md-6 col-sm-6 p-0">
+                            {% show_post_in_top_posts top_posts.4 %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endcache %}

@@ -1,0 +1,13 @@
+{% load navigation_tags %}
+<article class="zm-trending-post zm-lay-c {% if main %}large{% endif %} zm-single-post" data-dark-overlay="2.5"  data-scrim-bottom="9" data-effict-zoom="1">
+    <div class="zm-post-thumb">
+        {% if main %}
+            {% post_image post 'top-main' %}
+        {% else %}
+            {% post_image post 'top4'%}
+        {% endif %}
+    </div>
+    <div class="zm-post-dis text-white">
+        <h2 class="zm-post-title"><a href="{{ post.get_url }}" target="_blank">{{ post.title }}</a></h2>
+    </div>
+</article>

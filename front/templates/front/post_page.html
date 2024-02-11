@@ -1,0 +1,234 @@
+{% extends "front/base2.html" %}
+{% load static navigation_tags wagtailcore_tags wagtailimages_tags %}
+{% block head_js %}
+<style>
+.modal-content {
+    -webkit-border-radius: 0;
+    -webkit-background-clip: padding-box;
+    -moz-border-radius: 0;
+    -moz-background-clip: padding;
+    border-radius: 6px;
+    background-clip: padding-box;
+    -webkit-box-shadow: 0 0 40px rgba(0,0,0,.5);
+    -moz-box-shadow: 0 0 40px rgba(0,0,0,.5);
+    box-shadow: 0 0 40px rgba(0,0,0,.5);
+    color: #000;
+    background-color: #fff;
+    border: rgba(0,0,0,0);
+}
+.modal-message .modal-dialog {
+    width: 300px;
+}
+.modal-message .modal-body, .modal-message .modal-footer, .modal-message .modal-header, .modal-message .modal-title {
+    background: 0 0;
+    border: none;
+    margin: 0;
+    padding: 0 20px;
+    text-align: center!important;
+}
+
+.modal-message .modal-title {
+    font-size: 17px;
+    color: #737373;
+    margin-bottom: 3px;
+}
+
+.modal-message .modal-body {
+    color: #737373;
+}
+
+.modal-message .modal-header {
+    color: #fff;
+    margin-bottom: 10px;
+    padding: 15px 0 8px;
+}
+.modal-message .modal-header .fa, 
+.modal-message .modal-header 
+.glyphicon, .modal-message 
+.modal-header .typcn, .modal-message .modal-header .wi {
+    font-size: 30px;
+}
+
+.modal-message .modal-footer {
+    margin: 25px 0 20px;
+    padding-bottom: 10px;
+}
+
+.modal-backdrop.in {
+    zoom: 1;
+    filter: alpha(opacity=75);
+    -webkit-opacity: .75;
+    -moz-opacity: .75;
+    opacity: .75;
+}
+.modal-backdrop {
+    background-color: #fff;
+}
+.modal-message.modal-success .modal-header {
+    color: #53a93f;
+    border-bottom: 3px solid #a0d468;
+}
+
+.modal-message.modal-info .modal-header {
+    color: #57b5e3;
+    border-bottom: 3px solid #57b5e3;
+}
+
+.modal-message.modal-danger .modal-header {
+    color: #d73d32;
+    border-bottom: 3px solid #e46f61;
+}
+
+.modal-message.modal-warning .modal-header {
+    color: #f4b400;
+    border-bottom: 3px solid #ffce55;
+}
+</style>
+
+<script type="application/ld+json">
+{
+   "@context": "http://schema.org",
+   "@type": "NewsArticle",
+   "url": "https://faceit.ir{{ page.get_url }}",
+   "publisher":{
+      "@type":"Organization",
+      "name":"رسانه دیجیتال فیسیت",
+      "logo":"https://faceit.ir{% static 'front/new/newmedia/faceitlogo.png' %}"
+   },
+   "headline": "{{ page.title }}",
+   "mainEntityOfPage": "https://faceit.ir{{ page.get_url }}",
+   "articleBody": "{{ page.intro }}",
+   "image":[
+   {% image page.image width-400 as l%}
+      "https://faceit.ir{{ l.url }}"
+   ],
+   "datePublished":"{{ page.date_published }}"
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="zm-section single-post-wrap bg-white">
+    <div class="container">
+        <div class="row">
+            {% include "front/post_view.html" %}
+            {% include "front/sidebar.html" %}
+        </div>
+        {% if settings.front.PromotionSettings.bottom_script %}
+                        {{ settings.front.PromotionSettings.bottom_script }}
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
+{% block page_js %}
+<script type="text/javascript">
+$(function() {
+
+
+    // This function gets cookie with a given name
+    function getCookie(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie != '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = jQuery.trim(cookies[i]);
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    var csrftoken = getCookie('csrftoken');
+
+    /*
+    The functions below will create a header with csrftoken
+    */
+
+    function csrfSafeMethod(method) {
+        // these HTTP methods do not require CSRF protection
+        return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+    }
+    function sameOrigin(url) {
+        // test that a given url is a same-origin URL
+        // url could be relative or scheme relative or absolute
+        var host = document.location.host; // host + port
+        var protocol = document.location.protocol;
+        var sr_origin = '//' + host;
+        var origin = protocol + sr_origin;
+        // Allow absolute or scheme relative URLs to same origin
+        return (url == origin || url.slice(0, origin.length + 1) == origin + '/') ||
+            (url == sr_origin || url.slice(0, sr_origin.length + 1) == sr_origin + '/') ||
+            // or any other URL that isn't scheme relative or absolute i.e relative.
+            !(/^(\/\/|http:|https:).*/.test(url));
+    }
+
+    $.ajaxSetup({
+        beforeSend: function(xhr, settings) {
+            if (!csrfSafeMethod(settings.type) && sameOrigin(settings.url)) {
+                // Send the token to same-origin, relative URLs only.
+                // Send the token only if the method warrants CSRF protection
+                // Using the CSRFToken value acquired earlier
+                xhr.setRequestHeader("X-CSRFToken", csrftoken);
+            }
+        }
+    });
+
+});
+$('#comment-form').on('submit', function(event){
+    event.preventDefault();
+    console.log("comment submitted!")  // sanity check
+    add_comment();
+});
+function add_comment() {
+    console.log("add comment is working!") // sanity check
+    $.ajax({
+        url : "https://faceit.ir/inja/", // the endpoint
+        type : "POST", // http method
+        data : { postid : $('#postid').val(),
+            name : $('#name').val(),
+            email : $('#email').val(),
+            text : $('#text').val(),
+            reply_to : $('#replyId').val(),
+         }, // data sent with the post request
+
+        // handle a successful response
+        success : function(json) {
+            $('#name').val(''); // remove the value from the input
+            $('#email').val('');
+            $('#text').val('');
+            $('#replyId').val('');
+            console.log(json); // log the returned json to the console
+            console.log("success"); // another sanity check
+            $("#comment_success").modal();
+        },
+
+        // handle a non-successful response
+        error : function(xhr,errmsg,err) {
+            $('#results').html("<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: "+errmsg+
+                " <a href='#' class='close'>&times;</a></div>"); // add the error to the dom
+            console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+        }
+    });
+};
+
+
+</script>
+<div id="comment_success" class="modal modal-message modal-success fade" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <i class="fa-check"></i>
+                </div>
+                <div class="modal-title">ثبت نظر</div>
+                <div class="modal-body">نظر شما با موفقیت ثبت شد و پس از بررسی نمایش داده خواهد شد.</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">باشه</button>
+                </div>
+            </div> <!-- / .modal-content -->
+        </div> <!-- / .modal-dialog -->
+    </div>
+{% endblock %}

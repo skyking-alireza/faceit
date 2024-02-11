@@ -1,0 +1,71 @@
+{% load static %}
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="widget">
+                    <div class="footer-text text-right">
+                        <a href="index.html"><img src="{% static 'oldfaceit/images/version/faceit-logo.png' %}" alt="" class="img-fluid" width="75px"></a>
+                        <p>فیسیت، رسانه اخبار تکنولوژی ایران</p>
+                        <div class="social">
+                        {% if settings.front.SocialMedia.facebook_link %}
+                            <a href="{{ settings.front.SocialMedia.facebook_link }}" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>
+                        {% endif %}
+                        {% if settings.front.SocialMedia.instagram_link %}
+                            <a href="{{ settings.front.SocialMedia.instagram_link }}" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i class="fa fa-instagram"></i></a>
+                        {% endif %}
+                        {% if settings.front.SocialMedia.twitter_link %}
+                            <a href="{{ settings.front.SocialMedia.twitter_link }}" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>
+                        {% endif %}
+                        {% if settings.front.SocialMedia.aparat_link %}
+                            <a href="{{ settings.front.SocialMedia.aparat_link }}" data-toggle="tooltip" data-placement="bottom" title="Aparat"><i class="fa fa-youtube"></i></a>
+                        {% endif %}
+                        </div>
+                        <hr class="invis">
+                        <div class="newsletter-widget text-right">
+                        {% if settings.front.footer.show_subscribe_form %}
+                            <form class="form-inline" action="{% url 'subscribe' %}" method="post">
+                              {% csrf_token %}
+                              <input type="email" class="form-control" placeholder="آدرس ایمیل" name="email">
+                              <button type="submit" class="btn btn-primary">ارسال</button>
+                            </form>
+                        {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                <div class="widget">
+                    <h2 class="widget-title">موضوعات پر طرفدار</h2>
+                    <div class="link-widget">
+                        {% if settings.front.footer.static_footer_links %}
+                        <ul>
+                        {% for entry in settings.front.footer.get_links %}
+                            <li><a href="{{ entry.link.url }}">{{ entry.link }}</a></li>
+                        {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12">
+                <div class="widget">
+                    <div class="link-widget">
+                        <ul>
+                            <li><a href="#">درباره ما</a></li>
+                            <li><a href="#">تبلیغات</a></li>
+                            <li><a href="#">همکاری با فیسیت</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <br>
+                <div class="copyright">&copy; استفاده از مطالب <a href="http://faceit.ir">فیسیت</a> تنها با ذکر منبع مجاز است.</div>
+            </div>
+        </div>
+    </div>
+</footer>

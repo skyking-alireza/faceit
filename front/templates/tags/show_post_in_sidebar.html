@@ -1,0 +1,19 @@
+{% load navigation_tags%}
+<article class="zm-post-lay-e zm-single-post clearfix">
+    <div class="zm-post-thumb f-right">
+        <a href="{{ post.get_url }}">{% post_image post 'sidebar' %}</a>
+    </div>
+    <div class="zm-post-dis f-left">
+        <div class="zm-post-header">
+            <h2 class="zm-post-title"><a href="{{ post.get_url }}">{{ post.title }}</a></h2>
+            <div class="zm-post-meta">
+                <ul>
+                    {% for author in post.authors %} 
+                        <li class="s-meta"><a href="{% if author.page %}{{ author.page.url }}{% else %}#{% endif %}" title="" class="zm-author">{{ author }} </a></li>
+                    {% endfor %}
+                    <li class="s-meta"><i class="zm-date">{{ post.date_published|pDate }}</i></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</article>

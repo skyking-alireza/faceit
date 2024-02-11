@@ -1,0 +1,112 @@
+{% load static cache %}
+{% cache 900 footer %}
+<footer id="footer" class="footer-wrapper footer-1">
+    <div class="footer-top-wrap ptb-70 bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 hidden-sm pull-right">
+                    <div class="zm-widget pl-40">
+                        <h2 class="h6 zm-widget-title uppercase text-white mb-30">درباره‌ی فیسیت</h2>
+                        <div class="zm-widget-content">
+                            {% if settings.front.Footer.about_text%}
+                                {{ settings.front.Footer.about_text | linebreaks }}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-6 col-lg-2 pull-right">
+                    <div class="zm-widget">
+                        <h2 class="h6 zm-widget-title uppercase text-white mb-30">لینک شبکه‌های اجتماعی</h2>
+                        <div class="zm-widget-content">
+                            <div class="zm-social-media zm-social-1">
+                                <ul>
+                                {% if settings.front.SocialMedia.facebook_link %}
+                                    <li><a href="{{ settings.front.SocialMedia.facebook_link }}" target="_blank"><i class="fa fa-facebook"></i>فیسیت را در فیسبوک دنبال کنید</a></li>
+                                {% endif %}
+                                {% if settings.front.SocialMedia.twitter_link %}
+                                    <li><a href="{{ settings.front.SocialMedia.twitter_link }}" target="_blank"><i class="fa fa-twitter"></i>توییت‌های فیسیت را بخوانید</a></li>
+                                {% endif %}
+                                {% if settings.front.SocialMedia.instagram_link %}
+                                    <li><a href="{{ settings.front.SocialMedia.instagram_link }}" target="_blank"><i class="fa fa-instagram"></i>فیسیت را در اینستاگرام دنبال کنید</a></li>
+                                {% endif %}
+                                {% if settings.front.SocialMedia.aparat_link %}
+                                    <li><a href="{{ settings.front.SocialMedia.aparat_link }}" target="_blank"><img src="{% static 'front/images/aparat.png' %}">ویدیوهای فیسیت را در آپارات ببینید</a></li>
+                                {% endif %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-6 col-lg-3 pull-right">
+                    <div class="zm-widget pl-50 pr-20">
+                        <h2 class="h6 zm-widget-title uppercase text-white mb-30">موضوعات پرطرفدار</h2>
+                        <div class="zm-widget-content">
+                            <div class="zm-category-widget zm-category-1">
+                                <ul>
+                                {% if settings.front.footer.static_footer_links %}
+                                    {% for entry in settings.front.footer.get_links %}
+                                        <li><a href="{{ entry.link.url }}" target="_blank">{{ entry.link }}</a></li>
+                                    {% endfor %}
+                                {% endif %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-6 col-lg-3 pull-right">
+                    <div class="zm-widget">
+                        <h2 class="h6 zm-widget-title uppercase text-white mb-30">اشتراک روزنامه</h2>
+                        <!-- Start Subscribe From -->
+                        <div class="zm-widget-content">
+                            <div class="subscribe-form subscribe-footer">
+                                <p>با اشتراک در خبرنامه‌ی فیسیت خبرهای مهم فناوری و کسب و کار را با استفاده از ایمیل دریافت کنید.</p>
+                                <form  action="{% url 'subscribe' %}" method="post">
+                                    {% csrf_token %}
+                                    <input name="subscriber" placeholder="نام خود را وارد کنید" type="text">
+                                    <input name="email" placeholder="ایمیل خود را وارد کنید" required="true" type="email">
+                                    <input value="اشتراک" type="submit">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End footer top area -->
+    <div class="footer-buttom bg-black ptb-15">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 pull-right">
+                    <div class="zm-copyright">
+                        <p>©استفاده از مطالب  سایت و بازنشر آن‌ها به هر عنوانی تنها با ذکر نام <a href="https://faceit.ir" target="_blank">فیسیت </a>مجاز است.</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 text-left hidden-xs">
+                    <nav class="footer-menu zm-secondary-menu text-left">
+                        <ul>
+                            <li><a href="/" target="_blank">خانه</a></li>
+                            <li><a href="/aboutus" target="_blank">درباره ما</a></li>
+                            <li><a href="/contactus" target="_blank">ارتباط با ما</a></li>
+                        
+                                {% if settings.front.SocialMedia.facebook_link %}
+                                    <li><a href="{{ settings.front.SocialMedia.facebook_link }}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                {% endif %}
+                                {% if settings.front.SocialMedia.twitter_link %}
+                                    <li><a href="{{ settings.front.SocialMedia.twitter_link }}" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                {% endif %}
+                                {% if settings.front.SocialMedia.instagram_link %}
+                                    <li><a href="{{ settings.front.SocialMedia.instagram_link }}" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                                {% endif %}
+                                {% if settings.front.SocialMedia.aparat_link %}
+                                    <li><a href="{{ settings.front.SocialMedia.aparat_link }}" target="_blank"><img src="{% static 'front/images/aparat.png' %}"></a></li>
+                                {% endif %}
+                                <li><a href="https://faceit.ir/rss-latest" target="_blank"><i class="fa fa-rss"></i></a></li>
+                    </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+{% endcache %}

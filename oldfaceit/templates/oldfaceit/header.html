@@ -1,0 +1,27 @@
+{% load static %}
+<header class="tech-header header">
+    <div class="container-fluid">
+        <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+            <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="{{ request.site.root_page.url }}"><img src="{% static 'oldfaceit/images/version/faceit-logo.png' %}" height="50px" alt="">فیسیت</a>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    {% if settings.front.header.static_header_links %}
+                    {% for entry in settings.front.header.get_links %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ entry.link.url }}">{{ entry.link }}</a>
+                        </li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                <ul class="navbar-nav mr-2">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa fa-rss"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div><!-- end container-fluid -->
+</header>

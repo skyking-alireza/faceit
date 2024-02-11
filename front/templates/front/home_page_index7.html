@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<!-- Mirrored from bdevs.co/znews/znews/index-7.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 29 Nov 2018 09:01:54 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title> Znews 7 - HTML Magazine Template </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'front/images/favicon.ico' %}%">
+    <link rel="apple-touch-icon" href="{% static 'front/images/apple-touch-icon.png' %}">
+    
+    <!-- All css files are included here. -->
+    <!-- Bootstrap fremwork main css -->
+    <link rel="stylesheet" href="{% static 'front/css/bootstrap.min.css' %}">
+    <!-- This core.css file contents all plugings css file. -->
+    <link rel="stylesheet" href="{% static 'front/css/core.css' %}">
+    <!-- Theme shortcodes/elements style -->
+    <link rel="stylesheet" href="{% static 'front/css/shortcode/shortcodes.css' %}">
+    <!-- Theme main style -->
+    <link rel="stylesheet" href="{% static 'front/css/style.css' %}">
+    <!-- Responsive css -->
+    <link rel="stylesheet" href="{% static 'front/css/responsive.css' %}">
+    <!-- User style -->
+    <link rel="stylesheet" href="{% static 'front/css/custom.css' %}">
+    
+    <!-- Style customizer (Remove these lines please) -->
+    <link rel="stylesheet" href="{% static 'front/css/style-customizer.css' %}">
+    <link href="#" data-style="styles" rel="stylesheet">
+
+    <!-- Modernizr JS -->
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    
+    <!--  THEME PRELOADER AREA -->
+    <div id="preloader-wrapper">
+        <div class="preloader-wave-effect"></div>
+    </div>
+    <!-- THEME PRELOADER AREA END -->   
+  
+
+    <!-- Body main wrapper start -->
+    <div class="wrapper">
+        <!-- Start of header area -->
+        <header  class="header-area header-wrapper bg-white clearfix">
+            <div class="header-top-bar bg-dark ptb-10">
+                <div class="container">
+                    <div class="row">
+                        <div class="f-right col-xs-12 col-sm-12 col-md-6 col-lg-7  hidden-xs">
+                            <div class="header-top-left">
+                                <nav class="header-top-menu zm-secondary-menu">
+                                    <ul>
+                                        <li><a href="#">خانه</a></li>
+                                        <li><a href="#">خصوصیات</a></li>
+                                        <li><a href="#">کدهای کوتاه</a></li>
+                                        <li><a href="#">درباره ما</a></li>
+                                        <li><a href="#">ارتباط با ما</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-5">
+                            <div class="header-top-right clierfix text-left">
+                                <div class="header-social-bookmark topbar-sblock">
+                                    <ul>
+                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="zmaga-calendar topbar-sblock">
+                                    <span class="calendar uppercase"> امروز پنج شنبه 4 بهمن 1397</span>
+                                </div>
+                                <div class="user-accoint topbar-sblock">
+                                    <span class="login-btn uppercase">ورود</span>
+                                    <div class="login-form-wrap bg-white">
+                                        <form class="zm-signin-form text-right">
+                                            <input type="text" class="zm-form-control username" placeholder="نام کاربری یا ایمیل">
+                                            <input type="password" class="zm-form-control password" placeholder="رمز عبور">
+                                            <input type="checkbox" value=" Remember Me" class="remember"> مرا به خاطر بسپار<br>
+                                            <div class="zm-submit-box clearfix  mt-20">
+                                                <input type="submit" value="ورود">
+                                                <a href="registration.html">ثبت نام</a>
+                                            </div>
+                                            <a href="#" class="zm-forget">نام کاربری یا رمز عبورتان را فراموش کرده اید ؟</a>
+                                            <div class="zm-login-social-box">
+                                                <a href="#" class="social-btn bg-facebook block"><span class="btn_text"><i class="fa fa-facebook"></i>ورود با فیس بوک</span></a>
+                                                <a href="#" class="social-btn bg-twitter block"><span class="btn_text"><i class="fa fa-twitter"></i>ورود با توییتر</span></a>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-middle-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-lg-4 col-sm-5 col-xs-12 header-mdh f-right">
+                            <div class="global-table">
+                                <div class="global-row">
+                                    <div class="global-cell">
+                                        <div class="logo">
+                                            <a href="index.html">
+                                                <img src="images/logo/1.png" alt="main logo">
+                                            </a>
+                                            <p class="site-desc">قالب مجلات و وبلاگ های خبری</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-lg-7 col-sm-7 col-xs-12 header-mdh hidden-xs">
+                            <div class="global-table">
+                                <div class="global-row">
+                                    <div class="global-cell">
+                                        <div class="advertisement text-left">
+                                           <a href="#" class="block"><img src="images/ad/1.jpg" alt="ad img"></a>
+                                       </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom-area hidden-sm hidden-xs">
+                <div class="container">
+                    <div class="row">
+                         <div class="col-md-12 f-right">
+                            <div class="menu-wrapper  bg-theme clearfix">
+                                <div class="row">
+                                    <div class="col-md-11  f-right">
+                                        <div class="mainmenu-area">
+                                            <nav class="primary-menu f-right">
+                                   
+                                                <ul class="clearfix">
+                                                    <li class="current drop"><a href="#"> خانه</a>
+                                                        <ul class="dropdown">
+                                                            <li class="drop"><a href="#"> روزنامه </a>
+                                                                <ul class="dropdown level2">
+                                                                    <li><a href="index.html"> روزنامه 1</a></li>
+                                                                    <li><a href="index-3.html"> روزنامه 2</a></li>
+                                                                    <li><a href="index-7.html"> روزنامه 3</a></li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="drop"><a href="#">مجلات </a>
+                                                                <ul class="dropdown level2">
+                                                                    <li><a href="index-2.html">مجله 1</a></li>
+                                                                    <li><a href="index-7.html">مجله 2</a></li>
+                                                                    <li><a href="index-10.html"> مجله 3</a></li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="drop"><a href="#">وبلاگ ها</a>
+                                                                <ul class="dropdown level2">
+                                                                    <li><a href="index-5.html">وبلاگ نمایش 1</a></li>
+                                                                    <li><a href="index-6.html">وبلاگ نمایشی 2</a></li>
+                                                                    <li><a href="index-8.html">وبلاگ نمایشی 3</a></li>
+                                                                    <li><a href="index-9.html">وبلاگ نمایشی 4</a></li>
+                                                                    <li><a href="index-11.html">وبلاگ نمایشی 5</a></li>
+                                                                    <li><a href="index-12.html">وبلاگ نمایشی 6</a></li>
+                                                                    <li><a href="index-13.html">وبلاگ نمایش 7</a></li>
+                                                                    <li><a href="index-14.html">وبلاگ نمایشی  8</a></li>
+                                                                </ul>
+                                                            </li>
+                                                            <li><a href="index-17.html">سفر</a></li>
+                                                            <li><a href="index-16.html">سبک زندگی</a></li>
+                                                            <li><a href="index-17.html">ورزشی</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="index-3.html">مد</a></li>
+                                                    <li><a href="index-2.html">سبک زندگی </a></li>
+                                                    <li class="mega-parent drop"><a href="#"> مگا منو</a>
+                                                        <div class="mega-menu-area dropdown clearfix">
+                                                            <div class="zm-megamenu-sub-cats">
+                                                                <ul class="zm-megamenu-sub-tab" role="tablist">
+                                                                    <li role="presentation">
+                                                                        <a href="#allnews" aria-controls="allnews" role="tab" data-toggle="tab"> همه اخبار</a>
+                                                                    </li>
+                                                                    <li role="presentation" class="active">
+                                                                        <a href="#travel" aria-controls="travel" role="tab" data-toggle="tab"> توصیه های مسافرتی </a>
+                                                                    </li>
+                                                                    <li role="presentation">
+                                                                        <a href="#communication" aria-controls="communication" role="tab" data-toggle="tab">ارتباطات </a>
+                                                                    </li>
+                                                                    <li role="presentation">
+                                                                        <a href="#besuness" aria-controls="besuness" role="tab" data-toggle="tab">اخبار
+ تجارت</a>
+                                                                    </li>
+                                                                    <li role="presentation">
+                                                                        <a href="#love" aria-controls="love" role="tab" data-toggle="tab">علاقه
+ </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="zm-megamenu-content">
+                                                                <div class="tab-content">
+                                                                    <div role="tabpanel" class="tab-pane fade" id="allnews">
+                                                                        <div class="mega-caro-wrap zm-posts clearfix">
+                                                                            <div class="single-mega-post">
+                                                                                <article class="zm-mega-post zm-post-lay-a2">
+                                                                                    <div class="zm-post-thumb">
+                                                                                        <a href="blog-single-image.html"><img src="images/post/mega/1.jpg" alt="img"></a>
+                                                                                    </div>
+                                                                                    <div class="zm-post-dis">
+                                                                                        <div class="zm-post-header">
+                                                                                            <h2 class="zm-post-title h2"><a href="blog-single-image.html">پردازنده این محصول چند هسته ایست ؟</a></h2>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </article>
+                                                                            </div>
+                                                                            <div class="single-mega-post">
+                                                                                <article class="zm-mega-post zm-post-lay-a2">
+                                                                                    <div class="zm-post-thumb">
+                                                                                        <a href="blog-single-image.html"><img src="images/post/mega/2.jpg" alt="img"></a>
+                                                                                    </div>
+                                                                                    <div class="zm-post-dis">
+                                                                                        <div class="zm-post-header">
+                                                                                            <h2 class="zm-post-title h2"><a href="blog-single-image.html">پردازنده این محصول چند هسته ایست ؟</a></h2>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </article>
+                                                                            </div>
+                                                                            <div class="single-mega-post">
+                                                                                <article class="zm-mega-post zm-post-lay-a2">
+                                                                                    <div class="zm-post-thumb">
+                                                                                        <a href="blog-single-image.html"><img src="images/post/mega/3.jpg" alt="img"></a>
+                                                                                    </div>
+                                                                                    <div class="zm-post-dis">
+                                                                                        <div class="zm-post-header">
+                                                                                            <h2 class="zm-post-title h2"><a href="blog-single-image.html">پردازنده این محصول چند هسته ایست ؟</a></h2>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </article>
+                                                                            </div>
+                                                                            <div class="single-mega-post">
+                                                                                <article class="zm-mega-post zm-post-lay-a2">
+                                                                                    <div class="zm-post-thumb">
+                                                                                        <a href="blog-single-image.html"><img src="images/post/mega/4.jpg" alt="img"></a>
+                                                                                    </div>
+                                                                                    <div class="zm-post-dis">
+                                                                                        <div class="zm-post-header">
+                                                                                            <h2 class="zm-post-title h2"><a href="blog-single-image.html">پردازنده این محصول چند هسته ایست ؟</a></h2>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </article>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div role="tabpanel" class="tab-pane fade  in active" id="travel">
+                                                                        <div class="mega-caro-wrap zm-posts clearfix">
+                                                                            <div class="single-mega-post">
+                                                                                <article class="zm-mega-post zm-post-lay-a2">
+                                                                                    <div class="zm-post-thumb">
+                                                                                        <a href="blog-single-image.html"><img src="images/post/mega/1.jpg" alt="img"></a>
+                                                                                    </div>
+                                                                                    <div class="zm-post-dis">
+                                                                                        <div class="zm-post-header">
+                                                                                            <h2 class="zm-post-title h2"><a href="blog-single-image.html">پردازنده این محصول چند هسته ایست ؟</a></h2>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </article>
+                                                                            </div>
+                                                                            <div class="single-mega-post">
+                                                                                <article class="zm-mega-post zm-post-lay-a2">
+                                                                                    <div class="zm-post-thumb">
+                                                                                        <a href="blog-single-image.html"><img src="images/post/mega/2.jpg" alt="img"></a>
+                                                                                    </div>
+                                                                                    <div class="zm-post-dis">
+                                                                                        <div class="zm-post-header">
+                                                                                            <h2 class="zm-post-title h2"><a href="blog-single-image.html">پردازنده این محصول چند هسته ایست ؟</a></h2>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </article>
+                                                                            </div>
+                                                                            <div class="single-mega-post">
+                                                                                <article class="zm-mega-post zm-post-lay-a2">
+                                                                                    <div class="zm-post-thumb">
+                                                                                        <a href="blog-single-image.html"><img src="images/post/mega/3.jpg" alt="img"></a>
+                                                                                    </div>
+                                                                                    <div class="zm-post-dis">
+                                                                                        <div class="zm-post-header">
+                                                                                            <h2 class="zm-post-title h2"><a href="blog-single-image.html">پردازنده این محصول چند هسته ایست ؟</a></h2>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </article>
+                                                                            </div>
+                                                                            <div class="single-mega-post">
+                                                                                <article class="zm-mega-post zm-post-lay-a2">
+                                                                                    <div class="zm-post-thumb">
+                                                                                        <a href="blog-single-image.html"><img src="images/post/mega/4.jpg" alt="img"></a>
+                                                                                    </div>
+                                                                                    <div class="zm-post-dis">
+                                                                                        <div class="zm-post-header">
+                                                                                            <h2 class="zm-post-title h2"><a href="blog-single-image.html">پردازنده این محصول چند هسته ایست ؟</a></h2>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </article>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div role="tabpanel" class="tab-pane fade" id="communication">
+                                                                        <div class="mega-caro-wrap zm-posts clearfix">
+                                                                            <div class="single-mega-post">
+                                                                                <article class="zm-mega-post zm-post-lay-a2">
+                                                                                    <div class="zm-post-thumb">
+                                                                                        <a href="blog-single-image.html"><img src="images/post/mega/2.jpg" alt="img"></a>
+                                                                                    </div>
+                                                                                    <div class="zm-post-dis">
+                                                                                        <div class="zm-post-header">
+                                                                                            <h2 class="zm-post-title h2"><a href="blog-single-image.html">پردازنده این محصول چند هسته ایست ؟</a></h2>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </article>
+                                                                            </div>
+                                                                            <div class="single-mega-post">
+                                                                                <article class="zm-mega-post zm-post-lay-a2">
+                                                                                    <div class="zm-post-thumb">
+                                                                                        <a href="blog-single-image.html"><img src="images/post/mega/1.jpg" alt="img"></a>
+                                                                                    </div>
+                                                                                    <div class="zm-post-dis">
+                                                                                        <div class="zm-post-header">
+                                                                                            <h2 class="zm-post-title h2"><a href="blog-single-image.html">پردازنده این محصول چند هسته ایست ؟</a></h2>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </article>
+                                                                            </div>
+                                                                            <div class="single-mega-post">
+                                                                                <article class="zm-mega-post zm-post-lay-a2">
+                                                                                    <div class="zm-post-thumb">
+                                                                                        <a href="blog-single-image.html"><img src="images/post/mega/4.jpg" alt="img"></a>
+                                                                                    </div>
+                                                                                    <div class="zm-post-dis">
+                                                                                        <div class="zm-post-header">
+                                                                                            <h2 class="zm-post-title h2"><a href="blog-single-image.html">پردازنده این محصول چند هسته ایست ؟</a></h2>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </article>
+                                                                            </div>
+                                                                            <div class="single-mega-post">
+                                                                                <article class="zm-mega-post zm-post-lay-a2">
+                                                                                    <div class="zm-post-thumb">
+                                                                                        <a href="blog-single-image.html"><img src="images/post/mega/3.jpg" alt="img"></a>
+                                                                                    </div>
+                                                                                    <div class="zm-post-dis">
+                                                                                        <div class="zm-post-header">
+                                                                                            <h2 class="zm-post-title h2"><a href="blog-single-image.html">پردازنده این محصول چند هسته ایست ؟</a></h2>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </article>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div role="tabpanel" class="tab-pane fade" id="besuness">
+                                                                        <div class="mega-caro-wrap zm-posts clearfix">
+                                                                            <div class="single-mega-post">
+                                                                                <article class="zm-mega-post zm-post-lay-a2">
+                                                                                    <div class="zm-post-thumb">
+                                                                                        <a href="blog-single-image.html"><img src="images/post/mega/4.jpg" alt="img"></a>
+                                                                                    </div>
+                                                                                    <div class="zm-post-dis">
+                                                                                        <div class="zm-post-header">
+                                                                                            <h2 class="zm-post-title h2"><a href="blog-single-image.html">پردازنده این محصول چند هسته ایست ؟</a></h2>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </article>
+                                                                            </div>
+                                                                            <div class="single-mega-post">
+                                                                                <article class="zm-mega-post zm-post-lay-a2">
+                                                                                    <div class="zm-post-thumb">
+                                                                                        <a href="blog-single-image.html"><img src="images/post/mega/3.jpg" alt="img"></a>
+                                                                                    </div>
+                                                                                    <div class="zm-post-dis">
+                                                                                        <div class="zm-post-header">
+                                                                                            <h2 class="zm-post-title h2"><a href="blog-single-image.html">پردازنده این محصول چند هسته ایست ؟</a></h2>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </article>
+                                                                            </div>
+                                                                            <div class="single-mega-post">
+                                                                                <article class="zm-mega-post zm-post-lay-a2">
+                                                                                    <div class="zm-post-thumb">
+                                                                                        <a href="blog-single-image.html"><img src="images/post/mega/2.jpg" alt="img"></a>
+                                                                                    </div>
+                                                                                    <div class="zm-post-dis">
+                                                                                        <div class="zm-post-header">
+                                                                                            <h2 class="zm-post-title h2"><a href="blog-single-image.html">پردازنده این محصول چند هسته ایست ؟</a></h2>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </article>
+                                                                            </div>
+                                                                            <div class="single-mega-post">
+                                                                                <article class="zm-mega-post zm-post-lay-a2">
+                                                                                    <div class="zm-post-thumb">
+                                                                                        <a href="blog-single-image.html"><img src="images/post/mega/4.jpg" alt="img"></a>
+                                                                                    </div>
+                                                                                    <div class="zm-post-dis">
+                                                                                        <div class="zm-post-header">
+                                                                                            <h2 class="zm-post-title h2"><a href="blog-single-image.html">پردازنده این محصول چند هسته ایست ؟</a></h2>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </article>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div role="tabpanel" class="tab-pane fade" id="love">
+                                                                        <div class="mega-caro-wrap zm-posts clearfix">
+                                                                            <div class="single-mega-post">
+                                                                                <article class="zm-mega-post zm-post-lay-a2">
+                                                                                    <div class="zm-post-thumb">
+                                                                                        <a href="blog-single-image.html"><img src="images/post/mega/1.jpg" alt="img"></a>
+                                                                                    </div>
+                                                                                    <div class="zm-post-dis">
+                                                                                        <div class="zm-post-header">
+                                                                                            <h2 class="zm-post-title h2"><a href="blog-single-image.html">پردازنده این محصول چند هسته ایست ؟</a></h2>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </article>
+                                                                            </div>
+                                                                            <div class="single-mega-post">
+                                                                                <article class="zm-mega-post zm-post-lay-a2">
+                                                                                    <div class="zm-post-thumb">
+                                                                                        <a href="blog-single-image.html"><img src="images/post/mega/2.jpg" alt="img"></a>
+                                                                                    </div>
+                                                                                    <div class="zm-post-dis">
+                                                                                        <div class="zm-post-header">
+                                                                                            <h2 class="zm-post-title h2"><a href="blog-single-image.html">پردازنده این محصول چند هسته ایست ؟</a></h2>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </article>
+                                                                            </div>
+                                                                            <div class="single-mega-post">
+                                                                                <article class="zm-mega-post zm-post-lay-a2">
+                                                                                    <div class="zm-post-thumb">
+                                                                                        <a href="blog-single-image.html"><img src="images/post/mega/4.jpg" alt="img"></a>
+                                                                                    </div>
+                                                                                    <div class="zm-post-dis">
+                                                                                        <div class="zm-post-header">
+                                                                                            <h2 class="zm-post-title h2"><a href="blog-single-image.html">پردازنده این محصول چند هسته ایست ؟</a></h2>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </article>
+                                                                            </div>
+                                                                            <div class="single-mega-post">
+                                                                                <article class="zm-mega-post zm-post-lay-a2">
+                                                                                    <div class="zm-post-thumb">
+                                                                                        <a href="blog-single-image.html"><img src="images/post/mega/3.jpg" alt="img"></a>
+                                                                                    </div>
+                                                                                    <div class="zm-post-dis">
+                                                                                        <div class="zm-post-header">
+                                                                                            <h2 class="zm-post-title h2"><a href="blog-single-image.html">پردازنده این محصول چند هسته ایست ؟</a></h2>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </article>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li><a href="index-17.html">سفر</a></li>
+                                                    <li><a href="index-16.html">تجارت</a></li>
+                                                    <li><a href="index-17.html">ورزشی</a></li>
+                                                    <li class="drop"><a href="#">وبلاگ</a>
+                                                        <ul class="dropdown">
+                                                            <li><a href="blog-single-image.html"> وبلاگ 1</a></li>
+                                                            <li><a href="blog-single-image-2.html">وبلاگ 2</a></li>
+                                                            <li><a href="blog-single-video.html"> ویدیو 1</a></li>
+                                                            <li><a href="blog-single-video-2.html">ویدیو 2</a></li>
+                                                            <li><a href="blog-single-audio.html">آهنگ 1</a></li>
+                                                            <li><a href="blog-single-audio-2.html">آهنگ 2</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="drop"><a href="#">صفحات</a>
+                                                        <ul class="dropdown arrow-left">
+                                                            <li class="drop"><a href="#">وبلاگ</a>
+                                                                <ul class="dropdown level2">
+                                                                    <li><a href="blog-single-image.html"> وبلاگ 1</a></li>
+                                                                    <li><a href="blog-single-image-2.html">وبلاگ 2</a></li>
+                                                                    <li><a href="blog-single-video.html"> ویدیو 1</a></li>
+                                                                    <li><a href="blog-single-video-2.html">ویدیو 2</a></li>
+                                                                    <li><a href="blog-single-audio.html">آهنگ 1</a></li>
+                                                                    <li><a href="blog-single-audio-2.html">آهنگ 2</a></li>
+                                                                    
+                                                                </ul>
+                                                            </li>
+                                                            <li><a href="archive.html">بایگانی 1</a></li>
+                                                            <li><a href="archive-2.html">بایگانی 2</a></li>
+                                                            <li><a href="contact.html">تماس 1</a></li>
+                                                            <li><a href="contact-2.html">تماس 2</a></li>
+                                                            <li><a href="registration.html">ثبت نام</a></li>
+                                                            <li><a href="404.html">صفحه موجود نیست (404)</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="drop"><a href="#">خرید</a>
+                                                        <ul class="dropdown arrow-left">
+                                                            <li><a href="shop.html">خرید</a></li>
+                                                            <li><a href="shop-details.html">جزییات
+ خرید</a></li>
+                                                            <li><a href="cart.html">سبد خرید</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="contact.html">ارتباط با ما</a></li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <div class="search-wrap">
+                                            <div class="search-btn"><i class="fa fa-search"></i></div>
+                                            <div class="search-form">
+                                                <form action="#">
+                                                    <input type="search" placeholder="جستجو">
+                                                    <button type="submit"><i class='fa fa-search'></i></button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- mobile-menu-area start -->
+            <div class="mobile-menu-area hidden-md hidden-lg">
+                <div class="fluid-container">
+                    <div class="mobile-menu clearfix">
+                        <div class="search-wrap mobile-search">
+                            <div class="mobile-search-btn"><i class="fa fa-search"></i></div>
+                            <div class="mobile-search-form">
+                                <form action="#">
+                                    <input type="text" placeholder="جستجو">
+                                    <button type="submit"><i class='fa fa-search'></i></button>
+                                </form>
+                            </div>
+                        </div>
+                        <nav id="mobile_dropdown">
+                            <ul>
+                                <li><a href="index.html">خانه </a>
+                                    <ul>
+                                        <li><a href="index-3.html"> روزنامه </a>
+                                            <ul>
+                                                <li><a href="index.html"> روزنامه 1</a></li>
+                                                <li><a href="index-3.html"> روزنامه 2</a></li>
+                                                <li><a href="index-7.html"> روزنامه 3</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="index-2.html">مجلات</a>
+                                            <ul class="dropdown level2">
+                                                <li><a href="index-2.html">مجله 1</a></li>
+                                                <li><a href="index-7.html">مجله 2</a></li>
+                                                <li><a href="index-10.html"> مجله 3</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="index-4.html">وبلاگ ها</a>
+                                            <ul class="dropdown level2">
+                                                <li><a href="index-5.html">وبلاگ نمایش 1</a></li>
+                                                <li><a href="index-6.html">وبلاگ نمایشی 2</a></li>
+                                                <li><a href="index-8.html">وبلاگ نمایشی 3</a></li>
+                                                <li><a href="index-9.html">وبلاگ نمایشی 4</a></li>
+                                                <li><a href="index-11.html">وبلاگ نمایشی 5</a></li>
+                                                <li><a href="index-12.html">وبلاگ نمایشی 6</a></li>
+                                                <li><a href="index-13.html">وبلاگ نمایش 7</a></li>
+                                                <li><a href="index-14.html">وبلاگ نمایشی  8</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="index-17.html">سفر</a></li>
+                                        <li><a href="index-16.html">سبک زندگی</a></li>
+                                        <li><a href="index-17.html">ورزشی</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">وبلاگ</a>
+                                    <ul>
+                                        <li><a href="blog-single-image.html"> وبلاگ 1</a></li>
+                                        <li><a href="blog-single-image-2.html">وبلاگ 2</a></li>
+                                        <li><a href="blog-single-video.html"> ویدیو 1</a></li>
+                                        <li><a href="blog-single-video-2.html">ویدیو 2</a></li>
+                                        <li><a href="blog-single-audio.html">آهنگ 1</a></li>
+                                        <li><a href="blog-single-audio-2.html">آهنگ 2</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">صفحات</a>
+                                    <ul>
+                                        <li><a href="#">وبلاگ</a>
+                                            <ul>
+                                                <li><a href="blog-single-image.html"> وبلاگ 1</a></li>
+                                                <li><a href="blog-single-image-2.html">وبلاگ 2</a></li>
+                                                <li><a href="blog-single-video.html"> ویدیو 1</a></li>
+                                                <li><a href="blog-single-video-2.html">ویدیو 2</a></li>
+                                                <li><a href="blog-single-audio.html">آهنگ 1</a></li>
+                                                <li><a href="blog-single-audio-2.html">آهنگ 2</a></li>
+                                                
+                                            </ul>
+                                        </li>
+                                        <li><a href="archive.html">بایگانی 1</a></li>
+                                        <li><a href="archive-2.html">بایگانی 2</a></li>
+                                        <li><a href="contact.html">تماس 1</a></li>
+                                        <li><a href="contact-2.html">تماس 2</a></li>
+                                        <li><a href="registration.html">ثبت نام</a></li>
+                                        <li><a href="404.html">صفحه موجود نیست (404)</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="shop.html">خرید</a>
+                                     <ul>
+                                        <li><a href="shop.html">خرید</a></li>
+                                        <li><a href="shop-details.html">جزییات
+ خرید</a></li>
+                                        <li><a href="cart.html">سبد خرید</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="contact.html">ارتباط با ما</a></li>
+                            </ul>
+                        </nav>
+                    </div>       
+                </div>
+            </div>
+            <!-- mobile-menu-area end -->   
+            <div class="breakingnews-wrapper hidden-xs">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
+                            <div class="breakingnews clearfix fix">
+                                <div class="bn-title">
+                                     <h6 > اخبار فوری</h6>
+                                </div>
+                                <div class="news-wrap">
+                                    <ul class="bkn clearfix" id="bkn">
+                                        <li>چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.   |    در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.   |   لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </li>
+                                        <li>بلکه و پایان ارائه در..   |   لورم ایپسوم متن ساختگی با تولید.   |   موجود و فعلی با لورم ایپسوم از. </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- End of header area -->
+        <!-- Start trending post area -->
+        <div class="trending-post-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="trend-post-list zm-lay-c-wrap zm-posts clearfix">
+                        <!-- Start single trend post -->
+                        <div class="col-md-6 col-sm-12 col-xs-12 p-0 pull-right">
+                            <article class="zm-trending-post zm-lay-c large zm-single-post" data-dark-overlay="2.5"  data-scrim-bottom="9" data-effict-zoom="1">
+                                <div class="zm-post-thumb">
+                                    <img src="images/post/trend/c/1.jpg" alt="img">
+                                </div>
+                                <div class="zm-post-dis text-white">
+                                    <div class="zm-category"><a href="#" class="bg-cat-3 cat-btn">طبیعت</a></div>
+                                    <h2 class="zm-post-title"><a href="blog-single-image.html">هدف  طراحان چاپگرها لورم ایپسوم برای تولید متن </a></h2>
+                                    <div class="zm-post-meta">
+                                        <ul>
+                                            <li class="s-meta"><a href="#" class="zm-author"> بهمن رضایی </a></li>
+                                            <li class="s-meta"><a href="#" class="zm-date"> بیستم  اسفند 1394</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <!-- End single trend post -->
+                        <!-- Start single trend post -->
+                        <div class="col-md-6 col-sm-12 col-xs-12 pull-right">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 p-0">
+                                    <article class="zm-trending-post zm-lay-c zm-single-post" data-dark-overlay="2.5"  data-scrim-bottom="9" data-effict-zoom="1">
+                                        <div class="zm-post-thumb">
+                                            <img src="images/post/trend/c/2.jpg" alt="img">
+                                        </div>
+                                        <div class="zm-post-dis text-white">
+                                            <div class="zm-category"><a href="#" class="bg-cat-4 cat-btn">غذا</a></div>
+                                            <h2 class="zm-post-title"><a href="blog-single-image.html">غذاهای
+ شمالی</a></h2>
+                                            <div class="zm-post-meta">
+                                                <ul>
+                                                    <li class="s-meta"><a href="#" class="zm-author"> بهمن رضایی </a></li>
+                                                    <li class="s-meta"><a href="#" class="zm-date"> بیستم  اسفند 1394</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                                <div class="col-md-6 col-sm-6 p-0">
+                                    <article class="zm-trending-post zm-lay-c zm-single-post" data-dark-overlay="2.5"  data-scrim-bottom="9" data-effict-zoom="1">
+                                        <div class="zm-post-thumb">
+                                            <img src="images/post/trend/c/3.jpg" alt="img">
+                                        </div>
+                                        <div class="zm-post-dis text-white">
+                                            <div class="zm-category"><a href="#" class="bg-cat-5 cat-btn">مد</a></div>
+                                            <h2 class="zm-post-title"><a href="blog-single-image.html">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت </a></h2>
+                                            <div class="zm-post-meta">
+                                                <ul>
+                                                    <li class="s-meta"><a href="#" class="zm-author"> بهمن رضایی </a></li>
+                                                    <li class="s-meta"><a href="#" class="zm-date"> بیستم  اسفند 1394</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 p-0">
+                                    <article class="zm-trending-post zm-lay-c zm-single-post" data-dark-overlay="2.5"  data-scrim-bottom="9" data-effict-zoom="1">
+                                        <div class="zm-post-thumb">
+                                            <img src="images/post/trend/c/4.jpg" alt="img">
+                                        </div>
+                                        <div class="zm-post-dis text-white">
+                                            <div class="zm-category"><a href="#" class="bg-cat-2 cat-btn">داد و ستد</a></div>
+                                            <h2 class="zm-post-title"><a href="blog-single-image.html">لورم ایپسوم </a></h2>
+                                            <div class="zm-post-meta">
+                                                <ul>
+                                                    <li class="s-meta"><a href="#" class="zm-author"> بهمن رضایی </a></li>
+                                                    <li class="s-meta"><a href="#" class="zm-date"> بیستم  اسفند 1394</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                                <div class="col-md-6 col-sm-6 p-0">
+                                    <article class="zm-trending-post zm-lay-c zm-single-post" data-dark-overlay="2.5"  data-scrim-bottom="9" data-effict-zoom="1">
+                                        <div class="zm-post-thumb">
+                                            <img src="images/post/trend/c/4.jpg" alt="img">
+                                        </div>
+                                        <div class="zm-post-dis text-white">
+                                            <div class="zm-category"><a href="#" class="bg-cat-1 cat-btn">حیوانات </a></div>
+                                            <h2 class="zm-post-title"><a href="blog-single-image.html">توان دفاعی کشورها </a></h2>
+                                            <div class="zm-post-meta">
+                                                <ul>
+                                                    <li class="s-meta"><a href="#" class="zm-author"> بهمن رضایی </a></li>
+                                                    <li class="s-meta"><a href="#" class="zm-date"> بیستم  اسفند 1394</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End single trend post -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End trending post area -->
+        <!-- Start page content -->
+        <section id="page-content" class="page-wrapper">
+            <div class="zm-section bg-white pt-70 pb-40">
+                <div class="container">
+                    <div class="row">
+                        <!-- Start left side -->
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7 columns pull-right">
+                            <div class="row mb-40">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <div class="section-title">
+                                        <h2 class="h6 header-color inline-block uppercase">آخرین اخبار</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="zm-posts">
+                                        <!-- Start single post layout C -->
+                                        <article class="zm-post-lay-c zm-single-post clearfix">
+                                            <div class="zm-post-thumb f-right">
+                                                <a href="blog-single-image.html"><img src="images/post/c/6.jpg" alt="img"></a>
+                                            </div>
+                                            <div class="zm-post-dis f-left">
+                                                <div class="zm-post-header">
+                                                    <div class="zm-category"><a href="#" class="bg-cat-1 cat-btn">سفر</a></div>
+                                                    <h2 class="zm-post-title"><a href="blog-single-image.html">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است .</a></h2>
+                                                    <div class="zm-post-meta">
+                                                        <ul>
+                                                            <li class="s-meta"><a href="#" class="zm-author"> بهمن رضایی </a></li>
+                                                            <li class="s-meta"><a href="#" class="zm-date"> بیستم  اسفند 1394</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="zm-post-content">
+                                                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است .</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <!-- Start single post layout C -->
+                                        <!-- Start single post layout C -->
+                                        <article class="zm-post-lay-c zm-single-post clearfix">
+                                            <div class="zm-post-thumb f-right">
+                                                <a href="blog-single-image.html"><img src="images/post/c/7.jpg" alt="img"></a>
+                                            </div>
+                                            <div class="zm-post-dis f-left">
+                                                <div class="zm-post-header">
+                                                    <div class="zm-category"><a href="#" class="bg-cat-2 cat-btn">داد و ستد</a></div>
+                                                    <h2 class="zm-post-title"><a href="blog-single-image.html">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است .</a></h2>
+                                                    <div class="zm-post-meta">
+                                                        <ul>
+                                                            <li class="s-meta"><a href="#" class="zm-author"> بهمن رضایی </a></li>
+                                                            <li class="s-meta"><a href="#" class="zm-date"> بیستم  اسفند 1394</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="zm-post-content">
+                                                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <!-- Start single post layout C -->
+                                        <!-- Start single post layout C -->
+                                        <article class="zm-post-lay-c zm-single-post clearfix">
+                                            <div class="zm-post-thumb f-right">
+                                                <a href="blog-single-image.html"><img src="images/post/c/8.jpg" alt="img"></a>
+                                            </div>
+                                            <div class="zm-post-dis f-left">
+                                                <div class="zm-post-header">
+                                                    <div class="zm-category"><a href="#" class="bg-cat-3 cat-btn">سرگرمی</a></div>
+                                                    <h2 class="zm-post-title"><a href="blog-single-image.html">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است .</a></h2>
+                                                    <div class="zm-post-meta">
+                                                        <ul>
+                                                            <li class="s-meta"><a href="#" class="zm-author"> بهمن رضایی </a></li>
+                                                            <li class="s-meta"><a href="#" class="zm-date"> بیستم  اسفند 1394</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="zm-post-content">
+                                                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <!-- Start single post layout C -->
+                                        <!-- Start Advertisement -->
+                                        <div class="advertisement">
+                                            <div class="row mtb-40">
+                                                <div class="col-md-12 text-center">
+                                                    <a href="#"><img src="images/ad/3.jpg" alt=""></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End Advertisement -->
+                                        <!-- Start single post layout C -->
+                                        <article class="zm-post-lay-c zm-single-post clearfix">
+                                            <div class="zm-post-thumb f-right">
+                                                <a href="blog-single-image.html"><img src="images/post/c/9.jpg" alt="img"></a>
+                                            </div>
+                                            <div class="zm-post-dis f-left">
+                                                <div class="zm-post-header">
+                                                    <div class="zm-category"><a href="#" class="bg-cat-5 cat-btn">غذا </a></div>
+                                                    <h2 class="zm-post-title"><a href="blog-single-image.html">توان دفاعی کشورها </a></h2>
+                                                    <div class="zm-post-meta">
+                                                        <ul>
+                                                            <li class="s-meta"><a href="#" class="zm-author"> بهمن رضایی </a></li>
+                                                            <li class="s-meta"><a href="#" class="zm-date"> بیستم  اسفند 1394</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="zm-post-content">
+                                                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <!-- Start single post layout C -->
+                                        <!-- Start single post layout C -->
+                                        <article class="zm-post-lay-c zm-single-post clearfix">
+                                            <div class="zm-post-thumb f-right">
+                                                <a href="blog-single-image.html"><img src="images/post/c/10.jpg" alt="img"></a>
+                                            </div>
+                                            <div class="zm-post-dis f-left">
+                                                <div class="zm-post-header">
+                                                    <div class="zm-category"><a href="#" class="bg-cat-4 cat-btn">الکترونیک</a></div>
+                                                    <h2 class="zm-post-title"><a href="blog-single-image.html">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است .</a></h2>
+                                                    <div class="zm-post-meta">
+                                                        <ul>
+                                                            <li class="s-meta"><a href="#" class="zm-author"> بهمن رضایی </a></li>
+                                                            <li class="s-meta"><a href="#" class="zm-date"> بیستم  اسفند 1394</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="zm-post-content">
+                                                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <!-- Start single post layout C -->
+                                        <!-- Start Advertisement -->
+                                        <div class="advertisement">
+                                            <div class="row mtb-40">
+                                                <div class="col-md-12 text-center">
+                                                    <a href="#"><img src="images/ad/3.jpg" alt=""></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End Advertisement -->
+                                        <!-- Start single post layout C -->
+                                        <article class="zm-post-lay-c zm-single-post clearfix">
+                                            <div class="zm-post-thumb f-right">
+                                                <a href="blog-single-image.html"><img src="images/post/c/14.jpg" alt="img"></a>
+                                            </div>
+                                            <div class="zm-post-dis f-left">
+                                                <div class="zm-post-header">
+                                                    <div class="zm-category"><a href="#" class="bg-cat-5 cat-btn">غذا </a></div>
+                                                    <h2 class="zm-post-title"><a href="blog-single-image.html">توان دفاعی کشورها </a></h2>
+                                                    <div class="zm-post-meta">
+                                                        <ul>
+                                                            <li class="s-meta"><a href="#" class="zm-author"> بهمن رضایی </a></li>
+                                                            <li class="s-meta"><a href="#" class="zm-date"> بیستم  اسفند 1394</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="zm-post-content">
+                                                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <!-- Start single post layout C -->
+                                        <!-- Start single post layout C -->
+                                        <article class="zm-post-lay-c zm-single-post clearfix">
+                                            <div class="zm-post-thumb f-right">
+                                                <a href="blog-single-image.html"><img src="images/post/c/12.jpg" alt="img"></a>
+                                            </div>
+                                            <div class="zm-post-dis f-left">
+                                                <div class="zm-post-header">
+                                                    <div class="zm-category"><a href="#" class="bg-cat-4 cat-btn">الکترونیک</a></div>
+                                                    <h2 class="zm-post-title"><a href="blog-single-image.html">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است .</a></h2>
+                                                    <div class="zm-post-meta">
+                                                        <ul>
+                                                            <li class="s-meta"><a href="#" class="zm-author"> بهمن رضایی </a></li>
+                                                            <li class="s-meta"><a href="#" class="zm-date"> بیستم  اسفند 1394</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="zm-post-content">
+                                                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <!-- Start single post layout C -->
+                                        <!-- Start single post layout C -->
+                                        <article class="zm-post-lay-c zm-single-post clearfix">
+                                            <div class="zm-post-thumb f-right">
+                                                <a href="blog-single-image.html"><img src="images/post/c/13.jpg" alt="img"></a>
+                                            </div>
+                                            <div class="zm-post-dis f-left">
+                                                <div class="zm-post-header">
+                                                    <div class="zm-category"><a href="#" class="bg-cat-4 cat-btn">الکترونیک</a></div>
+                                                    <h2 class="zm-post-title"><a href="blog-single-image.html">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است .</a></h2>
+                                                    <div class="zm-post-meta">
+                                                        <ul>
+                                                            <li class="s-meta"><a href="#" class="zm-author"> بهمن رضایی </a></li>
+                                                            <li class="s-meta"><a href="#" class="zm-date"> بیستم  اسفند 1394</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="zm-post-content">
+                                                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <!-- Start single post layout C -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End left side -->
+                        <!-- Start Right sidebar -->
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5 sidebar-warp columns xs-mt-0 md-mt-50 pull-right">
+                            <!-- Start Subscribe From -->
+                            <div class="row mb-40 sm-mt-50 xs-mt-50">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <div class="section-title">
+                                        <h2 class="h6 header-color inline-block uppercase">روزنامه</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-lg-12 col-md-offset-3 cl-sm-6 col-lg-offset-0">
+                                    <aside class="subscribe-form subscribe-v3">
+                                                <p>با  8 هزار نفر مشترک شوید و خود را با اخبار اختصاصی  ما به روز رسانی کنید.
+</p>
+                                        <form action="#">
+                                            <input type="text" placeholder="نام خود را وارد کنید">
+                                            <input type="submit" value="اشتراک">
+                                        </form>
+                                    </aside>
+                                </div>
+                            </div>
+                            <!-- End Subscribe From -->
+                            <div class="row mt-70">
+                                <div class="col-lg-4 col-sm-6 col-md-6 pull-right">
+                                    <aside class="zm-post-lay-a3-area">
+                                        <div class="row mb-40">
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                <div class="section-title">
+                                                    <h2 class="h6 header-color inline-block uppercase"> نکات مربوط به تغذیه</h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                <div class="zm-posts">
+                                                    <article class="zm-post-lay-a3">
+                                                        <div class="zm-post-thumb">
+                                                            <a href="blog-single-image.html"><img src="images/post/a/a3/1.jpg" alt="img"></a>
+                                                        </div>
+                                                        <div class="zm-post-dis">
+                                                            <div class="zm-post-header">
+                                                                <h2 class="zm-post-title h2"><a href="blog-single-image.html">پردازنده این محصول چند هسته ایست ؟</a></h2>
+                                                                <div class="zm-post-meta">
+                                                                    <ul>
+                                                                        <li class="s-meta"><a href="#" class="zm-date"> بیستم  اسفند 1394</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </article>
+                                                    <article class="zm-post-lay-a3">
+                                                        <div class="zm-post-thumb">
+                                                            <a href="blog-single-image.html"><img src="images/post/a/a3/2.jpg" alt="img"></a>
+                                                        </div>
+                                                        <div class="zm-post-dis">
+                                                            <div class="zm-post-header">
+                                                                <h2 class="zm-post-title h2"><a href="blog-single-image.html">پردازنده این محصول چند هسته ایست ؟</a></h2>
+                                                                <div class="zm-post-meta">
+                                                                    <ul>
+                                                                        <li class="s-meta"><a href="#" class="zm-date"> بیستم  اسفند 1394</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </article>
+                                                    <article class="zm-post-lay-a3 hidden-md">
+                                                        <div class="zm-post-thumb">
+                                                            <a href="blog-single-image.html"><img src="images/post/a/a3/3.jpg" alt="img"></a>
+                                                        </div>
+                                                        <div class="zm-post-dis">
+                                                            <div class="zm-post-header">
+                                                                <h2 class="zm-post-title h2"><a href="blog-single-image.html">پردازنده این محصول چند هسته ایست ؟</a></h2>
+                                                                <div class="zm-post-meta">
+                                                                    <ul>
+                                                                        <li class="s-meta"><a href="#" class="zm-date"> بیستم  اسفند 1394</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </article>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </aside>
+                                </div>
+                                <div class="col-lg-8 col-sm-6 col-md-6 xs-mt-50 pull-right">
+                                    <!-- Start Follow Us area -->
+                                    <div class="row mb-40 bug-fix-section-title-2">
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                            <div class="section-title">
+                                                <h2 class="h6 header-color inline-block uppercase"> ما را دنبال کنید </h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="followus-area">
+                                                <a href="#" class="social-btn large bg-facebook block"><span class="btn_text"><i class="fa fa-facebook"></i>336,784  لایک</span></a>
+                                                <a href="#" class="social-btn large bg-twitter block"><span class="btn_text"><i class="fa fa-twitter"></i>548,266  دنبال کننده</span></a>
+                                                <a href="#" class="social-btn large bg-youtube block"><span class="btn_text"><i class="fa fa-youtube-play"></i>806,457 مشترک</span></a>
+                                                <a href="#" class="social-btn large bg-rss block"><span class="btn_text"><i class="fa fa-rss"></i>755,629  دنبال کننده</span></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 mt-70">
+                                            <div class="advertisement">
+                                                <a href="#"><img src="images/ad/ad_sidebar.png" alt=""></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Follow Us area -->
+                                </div>
+                            </div>
+                            <div class="row mt-70">
+                                <div class="col-md-6 col-sm-6 pull-right">
+                                    <aside class="zm-post-lay-a2-area">
+                                        <div class="row mb-40">
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                <div class="section-title">
+                                                    <h2 class="h6 header-color inline-block uppercase">اخبار محبوب</h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                <div class="zm-posts">
+                                                    <article class="zm-post-lay-a2">
+                                                        <div class="zm-post-thumb">
+                                                            <a href="blog-single-image.html"><img src="images/post/a/a2/2.jpg" alt="img"></a>
+                                                        </div>
+                                                        <div class="zm-post-dis">
+                                                            <div class="zm-post-header">
+                                                                <h2 class="zm-post-title h2"><a href="blog-single-image.html">جستجو و شناخت کتب تاریخی </a></h2>
+                                                                <div class="zm-post-meta">
+                                                                    <ul>
+                                                                        <li class="s-meta"><a href="#" class="zm-author"> بهمن رضایی </a></li>
+                                                                        <li class="s-meta"><a href="#" class="zm-date"> بیستم  اسفند 1394</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </article>
+                                                    <article class="zm-post-lay-a2">
+                                                        <div class="zm-post-thumb">
+                                                            <a href="blog-single-image.html"><img src="images/post/a/a2/1.jpg" alt="img"></a>
+                                                        </div>
+                                                        <div class="zm-post-dis">
+                                                            <div class="zm-post-header">
+                                                                <h2 class="zm-post-title h2"><a href="blog-single-image.html">جستجو و شناخت کتب تاریخی </a></h2>
+                                                                <div class="zm-post-meta">
+                                                                    <ul>
+                                                                        <li class="s-meta"><a href="#" class="zm-author"> بهمن رضایی </a></li>
+                                                                        <li class="s-meta"><a href="#" class="zm-date"> بیستم  اسفند 1394</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </article>
+                                                    <article class="zm-post-lay-a2">
+                                                        <div class="zm-post-thumb">
+                                                            <a href="blog-single-image.html"><img src="images/post/a/a2/3.jpg" alt="img"></a>
+                                                        </div>
+                                                        <div class="zm-post-dis">
+                                                            <div class="zm-post-header">
+                                                                <h2 class="zm-post-title h2"><a href="blog-single-image.html">جستجو و شناخت کتب تاریخی </a></h2>
+                                                                <div class="zm-post-meta">
+                                                                    <ul>
+                                                                        <li class="s-meta"><a href="#" class="zm-author"> بهمن رضایی </a></li>
+                                                                        <li class="s-meta"><a href="#" class="zm-date"> بیستم  اسفند 1394</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </article>
+                                                    <article class="zm-post-lay-a2 hidden-sm hidden-md">
+                                                        <div class="zm-post-thumb">
+                                                            <a href="blog-single-image.html"><img src="images/post/a/a2/13.jpg" alt="img"></a>
+                                                        </div>
+                                                        <div class="zm-post-dis">
+                                                            <div class="zm-post-header">
+                                                                <h2 class="zm-post-title h2"><a href="blog-single-image.html">جستجو و شناخت کتب تاریخی </a></h2>
+                                                                <div class="zm-post-meta">
+                                                                    <ul>
+                                                                        <li class="s-meta"><a href="#" class="zm-author"> بهمن رضایی </a></li>
+                                                                        <li class="s-meta"><a href="#" class="zm-date"> بیستم  اسفند 1394</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </article>
+                                                    <article class="zm-post-lay-a2 hidden-sm  hidden-md">
+                                                        <div class="zm-post-thumb">
+                                                            <a href="blog-single-image.html"><img src="images/post/a/a2/5.jpg" alt="img"></a>
+                                                        </div>
+                                                        <div class="zm-post-dis">
+                                                            <div class="zm-post-header">
+                                                                <h2 class="zm-post-title h2"><a href="blog-single-image.html">جستجو و شناخت کتب تاریخی </a></h2>
+                                                                <div class="zm-post-meta">
+                                                                    <ul>
+                                                                        <li class="s-meta"><a href="#" class="zm-author"> بهمن رضایی </a></li>
+                                                                        <li class="s-meta"><a href="#" class="zm-date"> بیستم  اسفند 1394</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </article>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </aside>
+                                </div>
+                                <div class="col-md-6 col-sm-6 xs-mt pull-right">
+                                    <aside class="zm-post-lay-a4-area">
+                                        <div class="row mb-40">
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                <div class="section-title">
+                                                    <h2 class="h6 header-color inline-block uppercase">انتخاب ویراستاران </h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                <div class="zm-posts">
+                                                    <article class="zm-post-lay-a4">
+                                                        <div class="zm-post-dis">
+                                                            <div class="zm-post-header">
+                                                                <h2 class="zm-post-title h2"><a href="blog-single-image.html">جستجو و شناخت کتب تاریخی </a></h2>
+                                                                <div class="zm-post-meta">
+                                                                    <ul>
+                                                                        <li class="s-meta"><a href="#" class="zm-author"> بهمن رضایی </a></li>
+                                                                        <li class="s-meta"><a href="#" class="zm-date"> بیستم  اسفند 1394</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="zm-post-content">
+                                                                <p>کتابهای زیادی در شصت و سه درصد گذشته حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزار ها شناخت بیشتری را برای طراحان رایانه ای ایجاد کرد.</p>
+                                                            </div>
+                                                        </div>
+                                                    </article>
+                                                    <article class="zm-post-lay-a4">
+                                                        <div class="zm-post-dis">
+                                                            <div class="zm-post-header">
+                                                                <h2 class="zm-post-title h2"><a href="blog-single-image.html">جستجو و شناخت کتب تاریخی </a></h2>
+                                                                <div class="zm-post-meta">
+                                                                    <ul>
+                                                                        <li class="s-meta"><a href="#" class="zm-author"> بهمن رضایی </a></li>
+                                                                        <li class="s-meta"><a href="#" class="zm-date"> بیستم  اسفند 1394</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="zm-post-content">
+                                                                <p>کتابهای زیادی در شصت و سه درصد گذشته حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزار ها شناخت بیشتری را برای طراحان رایانه ای ایجاد کرد.</p>
+                                                            </div>
+                                                        </div>
+                                                    </article>
+                                                    <article class="zm-post-lay-a4">
+                                                        <div class="zm-post-dis">
+                                                            <div class="zm-post-header">
+                                                                <h2 class="zm-post-title h2"><a href="blog-single-image.html">جستجو و شناخت کتب تاریخی </a></h2>
+                                                                <div class="zm-post-meta">
+                                                                    <ul>
+                                                                        <li class="s-meta"><a href="#" class="zm-author"> بهمن رضایی </a></li>
+                                                                        <li class="s-meta"><a href="#" class="zm-date"> بیستم  اسفند 1394</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="zm-post-content">
+                                                                <p>کتابهای زیادی در شصت و سه درصد گذشته حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزار ها شناخت بیشتری را برای طراحان رایانه ای ایجاد کرد.</p>
+                                                            </div>
+                                                        </div>
+                                                    </article>
+                                                    <article class="zm-post-lay-a4">
+                                                        <div class="zm-post-dis">
+                                                            <div class="zm-post-header">
+                                                                <h2 class="zm-post-title h2"><a href="blog-single-image.html">جستجو و شناخت کتب تاریخی </a></h2>
+                                                                <div class="zm-post-meta">
+                                                                    <ul>
+                                                                        <li class="s-meta"><a href="#" class="zm-author"> بهمن رضایی </a></li>
+                                                                        <li class="s-meta"><a href="#" class="zm-date"> بیستم  اسفند 1394</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="zm-post-content">
+                                                                <p>کتابهای زیادی در شصت و سه درصد گذشته حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزار ها شناخت بیشتری را برای طراحان رایانه ای ایجاد کرد.</p>
+                                                            </div>
+                                                        </div>
+                                                    </article>
+                                                    <article class="zm-post-lay-a4">
+                                                        <div class="zm-post-dis">
+                                                            <div class="zm-post-header">
+                                                                <h2 class="zm-post-title h2"><a href="blog-single-image.html">جستجو و شناخت کتب تاریخی </a></h2>
+                                                                <div class="zm-post-meta">
+                                                                    <ul>
+                                                                        <li class="s-meta"><a href="#" class="zm-author"> بهمن رضایی </a></li>
+                                                                        <li class="s-meta"><a href="#" class="zm-date"> بیستم  اسفند 1394</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="zm-post-content">
+                                                                <p>کتابهای زیادی در شصت و سه درصد گذشته حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزار ها شناخت بیشتری را برای طراحان رایانه ای ایجاد کرد.</p>
+                                                            </div>
+                                                        </div>
+                                                    </article>
+                                                    <article class="zm-post-lay-a4">
+                                                        <div class="zm-post-dis">
+                                                            <div class="zm-post-header">
+                                                                <h2 class="zm-post-title h2"><a href="blog-single-image.html">جستجو و شناخت کتب تاریخی </a></h2>
+                                                                <div class="zm-post-meta">
+                                                                    <ul>
+                                                                        <li class="s-meta"><a href="#" class="zm-author"> بهمن رضایی </a></li>
+                                                                        <li class="s-meta"><a href="#" class="zm-date"> بیستم  اسفند 1394</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="zm-post-content">
+                                                                <p>کتابهای زیادی در شصت و سه درصد گذشته حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزار ها شناخت بیشتری را برای طراحان رایانه ای ایجاد کرد.</p>
+                                                            </div>
+                                                        </div>
+                                                    </article>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </aside>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Right sidebar -->
+                    </div>
+                    <!-- Start pagination area -->
+                    <div class="row hidden-xs">
+                        <div class="zm-pagination-wrap mt-70">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <nav class="zm-pagination ptb-40 text-center">
+                                            <ul class="page-numbers">
+                                                <li><a class="prev  page-numbers" href="#" >قبلی</a></li>
+                                                <li><span class="page-numbers current">1</span></li>
+                                                <li><a class="page-numbers" href="#">2</a></li>
+                                                <li><a class="page-numbers" href="#">3</a></li>
+                                                <li><a class="page-numbers" href="#">4</a></li>
+                                                <li><a class="page-numbers" href="#">5</a></li>
+                                                <li><span class="page-numbers zm-pgi-dots">...</span></li>
+                                                <li><a class="page-numbers" href="#">15</a></li>
+                                                 <li><a class="next  page-numbers" href="#">بعدی</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End pagination area -->
+                    <!-- Start Advertisement -->
+                    <div class="advertisement">
+                        <div class="row mt-40">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                                <a href="#"><img src="images/ad/2.jpg" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Advertisement -->
+                </div>
+            </div>
+        </section>
+        <!-- End page content -->
+        <!-- Start footer area -->
+        <footer id="footer" class="footer-wrapper footer-1">
+            <!-- Start footer top area -->
+            <div class="footer-top-wrap ptb-70 bg-dark">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 hidden-sm pull-right">
+                            <div class="zm-widget pl-40">
+                                <h2 class="h6 zm-widget-title uppercase text-white mb-30"> درباره زد نیوز</h2>
+                                <div class="zm-widget-content">
+                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4 col-md-6 col-lg-2 pull-right">
+                            <div class="zm-widget">
+                                <h2 class="h6 zm-widget-title uppercase text-white mb-30">
+ لینک های اجتماعی</h2>
+                                <div class="zm-widget-content">
+                                    <div class="zm-social-media zm-social-1">
+                                        <ul>
+                                            <li><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i>ما را در فیس بوک لایک کیند</a></li>
+                                            <li><a href="https://twitter.com/"><i class="fa fa-twitter"></i>توییتر ما را صدا بزنید</a></li>
+                                            <li><a href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i>ما را در پینترست پین کنید </a></li>
+                                            <li><a href="https://www.instagram.com/"><i class="fa fa-instagram"></i>ما را در اینستاگرام لایک کنید </a></li>
+                                            <li><a href="https://plus.google.com/"><i class="fa fa-google-plus"></i>به ما در گوگل پلاس بپیوندید</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4 col-md-6 col-lg-3 pull-right">
+                            <div class="zm-widget pl-50 pr-20">
+                                <h2 class="h6 zm-widget-title uppercase text-white mb-30">دسته های محبوب</h2>
+                                <div class="zm-widget-content">
+                                    <div class="zm-category-widget zm-category-1">
+                                        <ul>
+                                            <li><a href="#"> داد و ستد <span>22</span></a></li>
+                                            <li><a href="#">مد<span>18</span></a></li>
+                                            <li><a href="#">ورزشی<span>09</span></a></li>
+                                            <li><a href="#">تکنولوژی<span>35</span></a></li>
+                                            <li><a href="#">سرگرمی<span>7</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4 col-md-6 col-lg-3 pull-right">
+                            <div class="zm-widget">
+                                <h2 class="h6 zm-widget-title uppercase text-white mb-30">اشتراک روزنامه</h2>
+                                <!-- Start Subscribe From -->
+                                <div class="zm-widget-content">
+                                    <div class="subscribe-form subscribe-footer">
+                                                <p>با  8 هزار نفر مشترک شوید و خود را با اخبار اختصاصی  ما به روز رسانی کنید.
+</p>
+                                        <form action="#">
+                                            <input type="text" placeholder="نام خود را وارد کنید">
+                                            <input type="email" placeholder="ایمیل 
+ خود را وارد کنید " required="">
+                                            <input type="submit" value="اشتراک">
+                                        </form>
+                                    </div>
+                                </div>
+                                <!-- End Subscribe From -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End footer top area -->
+            <div class="footer-buttom bg-black ptb-15">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 pull-right">
+                            <div class="zm-copyright">
+                                <p >&copy;تولید شده توسط سرکار خانم کاظمی . تمامی حقوق محفوظ است .</p>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 text-left hidden-xs">
+                            <nav class="footer-menu zm-secondary-menu text-left">
+                                <ul>
+                                    <li><a href="#">خانه</a></li>
+                                    <li><a href="#">خصوصیات</a></li>
+                                    <li><a href="#">کدهای کوتاه</a></li>
+                                    <li><a href="#">درباره ما</a></li>
+                                    <li><a href="#">ارتباط با ما</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End footer area -->
+    </div>
+    <!-- Body main wrapper end -->
+
+    <!--Color customizer -->
+    <div class="style-customizer closed">
+        <a class="opener" href="#"><i class="fa fa-gear fa-spin"></i></a> 
+        <div class="clearfix content-chooser">
+            <ul class="styleChange clearfix">
+                <li class="color-1" title="color-1" data-style="color-1" ></li>
+                <li class="color-2" title="color-2" data-style="color-2"></li>
+                <li class="color-3" title="color-3" data-style="color-3"></li>
+                <li class="color-4" title="color-4" data-style="color-4"></li>
+                <li class="color-5" title="color-5" data-style="color-5"></li>
+                <li class="color-6" title="color-6" data-style="color-6"></li>
+            </ul>
+        </div>
+    </div>
+    <!--Color customizer end -->
+    
+
+    <!-- Placed js at the end of the document so the pages load faster -->
+    <!-- jquery latest version -->
+    <script src="js/vendor/jquery-1.12.1.min.js"></script>
+    <!-- Bootstrap framework js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- All js plugins included in this file. -->
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <!-- Main js file that contents all jQuery plugins activation. -->
+    <script src="js/main.js"></script>
+
+</body>
+
+<!-- Mirrored from bdevs.co/znews/znews/index-7.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 29 Nov 2018 09:03:15 GMT -->
+</html>

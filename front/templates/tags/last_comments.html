@@ -1,0 +1,24 @@
+{% if comments %}
+    <aside class="zm-post-lay-f-area col-md-12 col-sm-6 col-lg-12 mt-60 sm-mt-60 pull-right">
+        <div class="row mb-40">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="section-title">
+                    <h2 class="h6 header-color inline-block uppercase">آخرین نظرات</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="zm-posts">
+                    {% for comment in comments%}
+                        <div class="zm-post-lay-f zm-single-post clearfix">
+                            <div class="zm-post-dis">
+                                <p><a href="{{ comment.post.get_url }}">{{ comment.name }} - <em>“{{ comment.post.title }}” </em></a>  <strong>{{ comment.text }}</strong></p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </aside>
+{% endif %}

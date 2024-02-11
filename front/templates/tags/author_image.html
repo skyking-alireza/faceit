@@ -1,0 +1,6 @@
+{% load wagtailimages_tags%}
+{% if author.image %}
+    {% image author.image fill-120x120 %}
+{% else %}
+    <img src="{{ author.avatar_url }}" alt="{{ author }}">
+{% endif %}

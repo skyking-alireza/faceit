@@ -1,0 +1,25 @@
+{% load wagtailimages_tags navigation_tags %}
+{% if post.image %}
+    {% if width == 'top-main' %}
+        {% responsiveimage post.image fill-750x470 srcset="fill-740x493 740w, width-750 750w, width-1000 1000w, fill-370x246 370w, width-450 450w, width-400 400w , width-270 270w" sizes="(min-width: 900px) 1000w, (max-width:350px) 270w, 100vw" as l%}
+        <img src="{{l.url}}" width="{{l.width}}" alt="{{l.alt}}" srcset="{{l.srcset}}" sizes="(min-width: 800px) 1000w, (max-width:350px) 270w, 100vw">
+    {% elif width == 'top4' %}
+        {% responsiveimage post.image fill-370x246 srcset="fill-740x493 740w, width-750 750w, width-1000 1000w, fill-370x246 370w, width-450 450w, width-400 400w , width-270 270w" sizes="(min-width: 900px) 1000w, (max-width:350px) 270w, 100vw" as l%}
+        <img src="{{l.url}}" width="{{l.width}}" alt="{{l.alt}}" srcset="{{l.srcset}}" sizes="(min-width: 800px) 1000w, (max-width:350px) 270w, 100vw">
+    {% elif width == 'list' %}
+        {% responsiveimage post.image max-450x300 srcset="fill-740x493 740w, width-750 750w, width-1000 1000w, fill-370x246 370w, width-450 450w, width-400 400w , width-270 270w" sizes="(min-width: 900px) 1000w, (max-width:350px) 270w, 100vw" as l%}
+        <img src="{{l.url}}" width="{{l.width}}" alt="{{l.alt}}" srcset="{{l.srcset}}" sizes="(min-width: 800px) 1000w, (max-width:350px) 270w, 100vw">
+    {% elif width == 'single' %}
+        {% responsiveimage post.image width-750 srcset="fill-740x493 740w, width-750 750w, width-1000 1000w, fill-370x246 370w, width-450 450w, width-400 400w , width-270 270w" sizes="(min-width: 900px) 1000w, (max-width:350px) 270w, 100vw" as l%}
+        <img src="{{l.url}}" width="{{l.width}}" alt="{{l.alt}}" srcset="{{l.srcset}}" sizes="(min-width: 800px) 1000w, (max-width:350px) 270w, 100vw">
+    {% elif width == 'sidebar' %}
+        {% responsiveimage post.image width-270 srcset="fill-370x246 370w, width-270 270w" sizes="(min-width: 760px) 370w, (max-width:760px) 270w, 100vw" as l%}
+        <img src="{{l.url}}" width="{{l.width}}" alt="{{l.alt}}" srcset="{{l.srcset}}" sizes="(min-width: 800px) 270w, (max-width:350px) 270w, 100vw">
+    {% elif width == 'related' %}
+        {% responsiveimage post.image width-270 srcset="fill-740x493 740w, width-750 750w, width-1000 1000w, fill-370x246 370w, width-450 450w, width-400 400w , width-270 270w" sizes="(min-width: 900px) 1000w, (max-width:350px) 270w, 100vw" %}
+    {% else %}
+        {% image post.image fill-750x470 %}
+    {% endif %}
+{% else %}
+    <img src="{{ src }}" alt="{{ post.title }}" srcset="{% for s in sources %} {{s}} ,{% endfor %} ">
+{% endif %}

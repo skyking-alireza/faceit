@@ -1,0 +1,121 @@
+{% load static navigation_tags wagtailcore_tags wagtailimages_tags cache %}
+<!-- Header starts -->
+{% cache 900 header %}
+<header  class="header-area header-wrapper clearfix">
+    <!-- Header nav start -->
+    <div class="header-top-bar bg-dark ptb-10 header-fixed">
+        <!-- container start -->
+        <div class="container">
+            <!-- row in container start-->
+            <div class="row">
+                <!-- col for brand start -->
+                <div class="f-right col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <!-- Logo start-->
+                    <div class="brand">
+                        <a href="{{ request.site.root_page.url }}"><img src="{% static 'front/new/newmedia/faceitlogo.png' %}" alg="faceit"><h1>فیسیت </h1><span>چهره و اخبار فناوری</span></a>
+                    </div>
+                    <!-- Logo end -->
+                </div>
+                <!-- col for brand end -->
+                <!-- col for navbar start -->
+                <div class="f-right col-xs-12 col-sm-12 col-md-8 col-lg-8 hidden-xs hidden-sm">
+                    <!-- Nav menu start -->
+                    <nav class="header-top-menu zm-secondary-menu">
+                        <ul>
+                            {% if settings.front.header.static_header_links %}
+                                {% for entry in settings.front.header.get_links %}
+                                    <li><a href="{{ entry.link.url }}">{{ entry.link }}</a></li>
+                                {% endfor %}
+                            {% endif %}
+                        </ul>
+                    </nav>
+                    <!-- Nav menu end -->
+                </div>
+                <!-- col for navbar end -->
+                <!-- col for search start -->
+                <div class="col-md-1 col-lg-1 hidden-sm hidden-xs">
+                    <div class="search-wrap">
+                        <div class="search-btn"><i class="fa fa-search"></i></div>
+                        <div class="search-form">
+                            <form action="https://faceit.ir/search" method="GET">
+                                <input type="search" placeholder="جستجو" name='q'>
+                                <button type="submit"><i class='fa fa-search'></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- col for search end -->
+            </div>
+            <!-- row in container end-->
+            <!-- mobile-menu-area start -->
+            <div class="mobile-menu-area hidden-md hidden-lg">
+                <div class="fluid-container">
+                    <div class="mobile-menu clearfix">
+                        <div class="search-wrap mobile-search">
+                            <div class="mobile-search-btn"><i class="fa fa-search"></i></div>
+                            <div class="mobile-search-form">
+                                <form action="https://faceit.ir/search" method="GET">
+                                    <input type="text" placeholder="جستجو" name='q'>
+                                    <button type="submit"><i class='fa fa-search'></i></button>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- Nav menu start -->
+                        <nav id="mobile_dropdown">
+                            <ul>
+                            {% if settings.front.header.static_header_links %}
+                                {% for entry in settings.front.header.get_links %}
+                                    <li><a href="{{ entry.link.url }}">{{ entry.link }}</a></li>
+                                {% endfor %}
+                            {% endif %}
+                            </ul>
+                        </nav>
+                        <!-- Nav menu end -->
+                    </div>       
+                </div>
+            </div>
+            <!-- mobile-menu-area end -->   
+        </div>
+        <!-- container end -->
+    </div>
+    <!-- Header nav end -->
+    <!-- Middle area start -->
+{% endcache %}
+    <div class="header-middle-area">
+        <!-- Container start-->
+        <div class="top-container">
+            <div class="row">
+                <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12 header-mdh">
+                    <div class="global-table">
+                        <div class="global-row">
+                            <div class="global-cell">
+                                <div class="advertisement text-left">
+                                {% if settings.front.PromotionSettings.header_left_script %}
+                                    {{ settings.front.PromotionSettings.header_left_script }}
+                                {% elif settings.front.PromotionSettings.header_left_img %}
+                                    <a href="{{ settings.front.PromotionSettings.header_left_url }}" target="_blank">{% image settings.front.PromotionSettings.header_left_img width-770 %}</a>
+                                {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12 header-mdh">
+                    <div class="global-table">
+                        <div class="global-row">
+                            <div class="global-cell">
+                                <div class="advertisement text-left">
+                                {% if settings.front.PromotionSettings.header_right_script %}
+                                    {{ settings.front.PromotionSettings.header_right_script }}
+                                {% elif settings.front.PromotionSettings.header_right_img %}
+                                    <a href="{{ settings.front.PromotionSettings.header_right_url }}" target="_blank">{% image settings.front.PromotionSettings.header_right_img width-770 %}</a>
+                                {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Middle area end -->

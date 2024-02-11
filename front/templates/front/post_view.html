@@ -1,0 +1,208 @@
+{% load static navigation_tags wagtailcore_tags wagtailimages_tags cache %}
+<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 columns pull-right">
+    <div class="row">
+        <!-- Start single post image formate-->
+        <div class="col-md-12">
+            <article class="zm-post-lay-single">
+                <div class="zm-post-dis">
+                    <div class="zm-post-header">
+                        <h1 class="zm-post-title h2"><a href="{{ page.get_url }}">{{ page.title }}</a></h1>
+                        <div class="zm-post-meta">
+                        {% if page.get_parent.category %}
+                            <div class="zm-category"><a href="{{ page.get_parent.url }}" class="bg-cat-5 cat-btn">{{ page.get_parent.title }}</a></div>
+                        {% endif %}
+                            <ul>
+                                {% for author in page.authors %} 
+                                    <li class="s-meta"><a href="{% if author.page %}{{ author.page.url }}{% else %}#{% endif %}" title="" class="zm-author" rel="noindex" target="_blank">{{ author }} </a></li>
+                                {% endfor %}
+                                <li class="s-meta"><i class="zm-date">{{ page.date_published|pDate }}</i></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                <div class="zm-post-thumb">
+                    <a href="{{ page.get_url }}">
+                        {% post_image page 'single' %}
+                    </a>
+                </div>
+                    <div class="zm-post-content">
+                        <p>{{ page.introduction | linebreaks }}</p>
+                        {% if settings.front.PromotionSettings.news_script %}
+                            {{ settings.front.PromotionSettings.news_script }}
+                        {% elif settings.front.PromotionSettings.news_img %}
+                            <a href="{{ settings.front.PromotionSettings.news_url }}" target="_blank">{% image settings.front.PromotionSettings.news_img width-770 %}</a>
+                        {% endif %}
+                        {{ page.body }}
+                        {% if page.reference_link %}
+                        <p><strong>منبع خبر: </strong><a href="{{ page.reference_link }}" rel="nofollow" target="_blank">{{ page.reference_title }}</a></p>
+                        {% endif %}
+                    </div>
+                    <div class="entry-meta-small clearfix ptb-40 mtb-40 border-top border-bottom">
+                        <div class="meta-list pull-right">
+                            <span class="post-title">برچسب‌ها</span>
+                            {% if page.get_tags %}
+                                {% for tag in page.get_tags %}
+                                    <a href="{{ tag.url }}" title="{{ tag }}" rel="noindex" target="_blank">{{ tag }}</a> , 
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% for author in page.authors %}
+                    <div class="administrator-info clearfix">
+                        <div class="administrator-avatar">
+                            {% author_image author %}
+                        </div>
+                        <div class="administrator-description">
+                            <h4 class="post-title"><a href="{% if author.page %}{{ author.page.url }}{% else %}#{% endif %}">{{ author }} {% if author.job_title %} - {{ author.job_title }}{% endif %}</a></h4>
+                            <p>{{ author.bio|richtext }}</p>
+                            <div class="share-social-link">
+                                {% if author.facebook_link %}<a href="{{ author.facebook_link }}" title="Facebook"><i class="fa fa-facebook"></i></a>{% endif %}
+                                {% if author.twitter_link %}<a href="{{ author.twitter_link }}" title="Twitter"><i class="fa fa-twitter"></i></a>{% endif %}
+                                {% if author.instagram_link %}<a href="{{ author.instagram_link }}" title="Instagram"><i class="fa fa-instagram"></i></a>{% endif %}
+                                {% if author.linkedin_link %}<a href="{{ author.linkedin_link }}" title="Linkedin"><i class="fa fa-linkedin"></i></a>{% endif %}
+                                {% if author.github_link %}<a href="{{ author.github_link }}" title="Github"><i class="fa fa-github"></i></a>{% endif %}
+                                {% if author.website_link %}<a href="{{ author.website_link }}" title="Website"><i class="fa fa-link"></i></a>{% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <hr/>
+                    {% endfor %}
+                </div>
+            </article>
+        </div>
+        <!--Start Similar post -->
+        {% if page.get_related_posts %}
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <aside class="zm-post-lay-a2-area">
+                <div class="post-title mb-40">
+                    <h2 class="h6 inline-block">پست های مرتبط </h2>
+                </div>
+                <div class="row">
+                    <div class="zm-posts clearfix">
+                    {% for post in page.get_related_posts %}
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                            <article class="zm-post-lay-a2">
+                                <div class="zm-post-thumb">
+                                    <a href="{{ post.get_url }}">{% post_image post%}</a>
+                                </div>
+                                <div class="zm-post-dis">
+                                    <div class="zm-post-header">
+                                        <h2 class="zm-post-title h2"><a href="{{ post.get_url }}">{{ post.title }}</a></h2>
+                                        <div class="zm-post-meta">
+                                            <ul>
+                                                {% for author in post.authors %} 
+                                                    <li class="s-meta"><a href="{% if author.page %}{{ author.page.url }}{% else %}#{% endif %}" title="" class="zm-author">{{ author }} </a></li>
+                                                {% endfor %}
+                                                <li class="s-meta"><i class="zm-date">{{ post.date_published|pDate }}</i></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    {% endfor %}
+                    </div>
+                </div>
+            </aside>
+        </div>
+        {% endif %}
+        {% if settings.front.PromotionSettings.news_bottom2_script %}
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <aside class="zm-post-lay-a2-area">
+                <div class="row">
+                    <div class="zm-posts clearfix">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        {{ settings.front.PromotionSettings.news_bottom2_script }}
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+        {% endif %}
+        {% if settings.front.PromotionSettings.news_bottom1_script %}
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <aside class="zm-post-lay-a2-area">
+                <div class="row">
+                    <div class="zm-posts clearfix">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        {{ settings.front.PromotionSettings.news_bottom1_script }}
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+        {% endif %}
+                            <!-- Start Comment box  -->
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="review-area mt-50 ptb-70 border-top">
+                <div class="post-title mb-40">
+                    <h2 class="h6 inline-block">{{ page.comments_count }} نظر درباره‌ی این پست نوشته شده است.</h2>
+                </div>
+                <div class="review-wrap">
+                    <div class="review-inner">
+                        <!-- Start Single Review -->
+                        {% for comment in page.published_comments %}
+                        <div class="single-review clearfix">
+                            <div class="reviewer-img">
+                            <img src="{{ comment.email }}">
+                            <!--    <img src="{% static 'front/images/unknown-person.gif' %}" alt=""> -->
+
+                            </div>
+                            <div class="reviewer-info">
+                                <h4 class="reviewer-name">{{ comment.name }}</h4>
+                                <span class="date-time">{{ comment.date|pDate }}</span>
+                                <p>{{ comment.text|linebreaks }}</p>
+                                <a href="#addcomment" class="reply-btn" id="{{ comment.id }}">پاسخ</a>
+                            </div>
+                        </div>
+                            {% for reply in comment.child.all %}
+                                <div class="single-review second-comment clearfix">
+                                    <div class="reviewer-img">
+                                    <img src="{{ reply.email }}">
+                                    </div>
+                                    <div class="reviewer-info">
+                                        <h4 class="reviewer-name">{{ reply.name }}</h4>
+                                        <span class="date-time">{{ reply.date|pDate }}</span>
+                                        <p>{{ reply.text|linebreaks }}</p>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="comment-form-area" id="addcomment">
+                <div class="post-title mb-40">
+                    <h2 class="h6 inline-block">ثبت نظر</h2>
+                    <div id='dd' style="font-weight:bold; color:red;"></div>
+                </div>
+                <div class="form-wrap">
+                    <form method = "post" id="comment-form">
+                        {% csrf_token %}
+                        <input type="hidden" name="postid" value="{{ page.id }}" id="postid">
+                        <div class="form-inner clearfix">
+                            <div class="single-input right width-half">
+                                <input required="required" id="name" name="name" placeholder="نام خود را وارد کنید *" type="text">
+                            </div>
+                            <div class="single-input left width-half">
+                                <input required="required" id="email" name="email" placeholder="ایمیل خود را وارد کنید *" type="text">
+                            </div>
+                            <div class="single-input">
+                                <textarea class="textarea" id="text" name="text" placeholder="پیغام خود را در این جا بنویسید .."></textarea>
+                            </div>
+                            <input type="hidden" id='replyId' name='reply_to' value=''>
+                            <button class="submit-button" type="submit">ثبت نظر</button>
+                        </div>
+                    </form>
+                    <script type="text/javascript">
+                        {% for comment in page.published_comments %}
+                            document.getElementById("{{ comment.id }}").onclick=function(){document.getElementById("replyId").setAttribute('value','{{ comment.id }}');document.getElementById("dd").innerHTML="پاسخ به {{comment.name}}";};
+                        {% endfor %}
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

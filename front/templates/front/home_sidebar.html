@@ -1,0 +1,97 @@
+{% load static navigation_tags wagtailcore_tags wagtailimages_tags cache %}
+<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 sidebar-warp columns">
+    <div class="row">
+        <aside class="zm-tagcloud-list col-xs-12 col-sm-6 col-md-6 col-lg-12 mt-60 pull-right">
+            <div class="row mb-40">
+                <div class="col-md-12">
+                    <div class="section-title">
+                        <h2 class="h6 header-color inline-block uppercase">کلمات کلیدی </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row"> 
+                <div class="col-md-12">
+                    <div class="zm-tagcloud">
+                    {% for tag in page.get_tags %}
+                        <a href="{{ tag.url }}">{{ tag }}</a>
+                    {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- Start post layout E -->
+        {% if settings.front.SideBar.unorganized_panel_show %}
+            <aside class="zm-post-lay-e-area col-md-12 col-sm-6 col-lg-12 mt-60 pull-right">
+                <div class="row mb-40">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="section-title">
+                            <h2 class="h6 header-color inline-block">{{ settings.front.SideBar.unorganized_panel_title }}</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="zm-posts">
+                            {% for entry in settings.front.SideBar.get_unorganized_panel %}
+                                {% show_post_in_sidebar entry %}
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        {% endif %}
+        {% for panel in settings.front.SideBar.get_panels %}
+            {% if forloop.counter > 2 %}
+            <aside class="zm-post-lay-e-area col-md-12 col-sm-6 col-lg-12 mt-60 pull-right">
+                <div class="row mb-40">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="section-title">
+                            <h2 class="h6 header-color inline-block">{{ panel.title }}</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="zm-posts">
+                            {% for entry in panel.get_posts %}
+                                {% show_post_in_sidebar entry %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            {% endif %}
+        {% endfor %}
+        {% if settings.front.PromotionSettings.left_bottom_url %}
+            <aside class="zm-post-lay-a-area col-md-12 col-sm-6 col-lg-12 mt-60 pull-right">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="zm-posts">
+                            <article class="zm-post-lay-a sidebar">
+                                <div class="zm-post-thumb">
+                                    <a href="{{ settings.front.PromotionSettings.left_bottom_url }}" target="_blank">{% image settings.front.PromotionSettings.left_bottom_img fill-400x400 %}</a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        {% elif settings.front.PromotionSettings.left_bottom_script %}
+            <aside class="zm-post-lay-a-area col-md-12 col-sm-6 col-lg-12 mt-60 pull-right">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="zm-posts">
+                            <article class="zm-post-lay-a sidebar">
+                                <div class="zm-post-thumb">
+                                    {{ settings.front.PromotionSettings.left_bottom_script }}
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        {% endif %}
+        {% last_comments %}
+    </div>
+</div>

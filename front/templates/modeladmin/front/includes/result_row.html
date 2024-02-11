@@ -1,0 +1,7 @@
+{% load modeladmin_tags custom_admin_tags %}
+<tr{{ row_attrs }}>
+    <td><input type="checkbox" name="selected" value="{{ obj.id }}"></td>
+    {% for item in result %}
+        {% result_row_value_display forloop.counter0 %}
+    {% endfor %}
+</tr>

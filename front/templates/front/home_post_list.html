@@ -1,0 +1,50 @@
+{% load navigation_tags wagtailimages_tags %}
+<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 columns pull-right">
+    <div class="row mb-40">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="section-title">
+                <h2 class="h6 header-color inline-block uppercase">آخرین اخبار</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="zm-posts">
+                {% if pinned_post %}
+                {% show_post_in_list pinned_post %}
+                {% endif %}
+                {% for post in posts %}
+                    {% show_post_in_list post %}
+                    {% if forloop.counter == 3 %}
+                    {% if settings.front.PromotionSettings.list_script %}
+                        <div class="advertisement">
+                            <div class="col-md-12 text-center" style="height:250px">
+                        {{ settings.front.PromotionSettings.list_script }}
+                            </div>
+                        </div>
+                    {% elif settings.front.PromotionSettings.list_img %}
+                            <div class="advertisement">
+                                <div class="row mtb-40">
+                                    <div class="col-md-12 text-center">
+                                        <a href="{{ settings.front.PromotionSettings.list_url }}" target="_blank">
+                                        {% image settings.front.PromotionSettings.list_img width-770 %}
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                                        {% if forloop.counter == 6 %}
+                    {% if settings.front.PromotionSettings.list2_script %}
+                        <div class="advertisement">
+                            <div class="col-md-12 text-center" style="height:250px">
+                        {{ settings.front.PromotionSettings.list2_script }}
+                            </div>
+                        </div>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

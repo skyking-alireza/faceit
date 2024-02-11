@@ -1,0 +1,157 @@
+/*--------------------------------------------------------------
+
+    Template Name: Znews - HTML Magazine Template for Blogging and News Sites. 
+    Template URI: https://themeforest.net/user/nilartstudio
+    Description: Znews is a unique website template designed in html with a simple & beautiful look. There is an excellent solution for creating clean, wonderful and trending material design blog, magazine, news site or any other purposes websites.
+    Author: Nilartstudio
+    Author URI: http://Nilartstudio.com
+    Version: 1.0
+
+    Note: This is the file where you can add your custom styles to change the look of the theme. But don't modify "style.css" file.
+
+---------------------------------------------------------------*/
+
+
+/* ----------------------------------------------------
+	You can put your custom css code here: 
+-------------------------------------------------------*/
+
+h1.logo {
+    font-family: iransans-medium;
+    display: inline;
+}
+
+small.logo {
+    font-family: iransans-light;
+    font-size: smaller;
+}
+
+body {
+    font-family: iransans;
+}
+
+.bg-theme p,
+.bg-theme span,
+.bg-theme ul,
+.bg-theme a:not(.btn) {
+    color: #4f4f4f;
+    font-family: iransans-medium;
+}
+
+.header-mdh {
+    height: 130px;
+}
+
+primary-menu ul li ul.dropdown li a {
+    color: #6f6f6f
+}
+
+.zm-trending-post.zm-lay-c .zm-post-title {
+    font-size: 16px;
+    line-height: 20px;
+}
+
+@media (max-width: 1169px) and (min-width: 992px) {.zm-trending-post.zm-lay-c .zm-post-title {
+    font-size: 15px;
+    line-height: 20px;
+}}
+
+.zm-trending-post.zm-lay-c.large .zm-post-title {
+    font-size: 20px;
+    line-height: 36px;
+    text-align: justify;
+}
+
+.section-title {
+    font-family: iransans;
+}
+
+.zm-post-content p {
+    font-family: iransans-light;
+}
+
+.zm-post-content a {
+    color: #01aef0
+}
+
+.zm-post-content h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: iransans-medium;
+}
+
+.zm-post-content h1 {
+    font-size: 2.2em;
+}
+
+.zm-post-content h2 {
+    font-size: 2em;
+}
+
+.zm-post-content h3 {
+    font-size: 1.6em;
+}
+
+.zm-post-content h4 {
+    font-size: 1.4em;
+}
+
+.zm-post-content h5 {
+    font-size: 1.3em;
+}
+
+.zm-post-content h6 {
+    font-size: 1.1em;
+}
+
+.rich-text {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+@media (max-width:350px) {
+    .hidden-xxs {
+        display: none!important
+    }
+}
+
+.service-whatsapp {
+    background-color: #189d0e !important;
+}
+.service-telegram {
+    background-color: #64b4f5 !important;
+}
+.service-call {
+    direction: ltr;
+    background-color: #d3d3e1;
+    display: block;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+}
+.service-call strong {
+    font-size: 16px;
+    color:#202020;
+    margin: 5px;
+}
+.service-call a {
+    margin:5px;
+    display: block;
+    height: inherit;
+    background: transparent;
+}
+.service-call img {
+    padding:5px;
+    display: inline-block;
+    height: inherit;
+    background: transparent;
+}
+.zm-product-title {
+    font-size:20px;
+}
+.product-info p{
+    font-family: iransans;
+}

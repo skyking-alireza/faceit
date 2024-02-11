@@ -1,0 +1,61 @@
+{% extends "oldfaceit/base.html" %}
+{% load static navigation_tags wagtailcore_tags wagtailimages_tags %}
+{% block meta_keywords %}
+    <meta name="keywords" content="{% if post.meta_caption %}{{ post.meta_caption }}{% endif %}">
+{% endblock %}
+{% block meta_authors %}
+    <meta name="author" content="{{ post.author }}">
+{% endblock %}
+{% block content %}
+<section class="section single-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                <div class="page-wrapper">
+                    <div class="blog-title-area text-center">
+                        {% if parent_page %}
+                          <span class="color-orange"><a href="{{ parent_page.url}}" title="">{{ parent_page.category }}</a></span>
+                        {% else %}
+                          <span class="color-orange"><a href="#">بدون دسته‌بندی</a></span>
+                        {% endif %}
+                        <h1>{{ post.title }}</h1>
+                        <div class="blog-meta big-meta">
+                            <small><a href="#" title="">{{ post.date_published|pDate }}</a></small>
+                            <small>
+                              نوشته شده توسط: {{ post.author }}
+                            </small>
+                    </div>
+                    <div class="single-post-media">
+                      <img src="http://faceit.ir/{{ post.mainimage }}" class="img-fluid">
+                    </div>
+                    <div class="blog-content">
+                      {% if post.introduction %}
+                      <div class="pp">
+                      <p>
+                        {{ post.introduction }}
+                      </p>
+                      </div>
+                      {% endif %}
+                        <div class="pp">
+                          {{ post.body|richtext }}
+                        </div><!-- end pp -->
+                    </div><!-- end content -->
+{% if settings.front.PromotionSettings.news_img %}
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="banner-spot clearfix">
+                                <div class="banner-img">
+                                  <a href="{{ settings.front.PromotionSettings.news_url }}">
+                                  {% image settings.front.PromotionSettings.news_img fill-728x90 class="img-fluid" %}
+                                  </a>
+                                </div><!-- end banner-img -->
+                            </div><!-- end banner -->
+                        </div><!-- end col -->
+                    </div><!-- end row -->
+{% endif %}
+                    <hr class="invis1">
+
+                </div><!-- end page-wrapper -->
+            </div><!-- end col -->
+          </div>
+{% endblock %}

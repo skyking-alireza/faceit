@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+{% load navigation_tags %}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>{{ item_class.title }}</title>
+        <link>https://faceit.ir{{ item_class.link }}</link>
+        <description>{{ item_class.description }}</description>
+        <atom:link href="https://faceit.ir{{ item_class.link }}" rel="self"></atom:link>
+        <language>fa-IR</language>
+        <lastBuildDate>{{ now }}</lastBuildDate>
+        {% for item in item_class.items %}
+            {% add_item item_class item %}
+        {% endfor %}
+    </channel>
+</rss>

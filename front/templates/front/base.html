@@ -1,0 +1,119 @@
+{% load static navigation_tags wagtailcore_tags wagtailimages_tags %}
+<!DOCTYPE html>
+<html lang="fa" prefix="og: http://ogp.me/ns#" >
+    <head>
+    <meta name="google-site-verification" content="fQZz0yu1iDZGLyrjVOZBtcC9peFJYuUVgYI7-YdCG5c" />
+        <!-- Google Tag Manager -->
+    <script defer>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5ZKMB9F');</script>
+    <!-- End Google Tag Manager -->
+        <meta charset="UTF-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        {% block og %}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@faceitـir" />
+        <meta name="twitter:description" content="{{ page.introduction }}">
+        <meta name="twitter:title" content="{{ page.title }}">
+        <meta name="twitter:image" content="{% image page.image width-300 as img %}https://faceit.ir{{ img.url }}">
+        <meta property="og:url" content="https://faceit.ir{% if page.get_url %}{{ page.get_url }}{% else %}{{ page.url }}{% endif %}" />
+        <meta property="og:locale" content="fa_IR">
+        <meta property="og:type" content="article">
+        <meta property="og:site_name" content="فیسیت - چهره و اخبار فناوری">
+        <meta property="og:title" content="{{ page.title }}" />
+        <meta property="og:description" content="{{ page.introduction }}" />
+        <meta property="og:image" content="{% image page.image width-300 as img %}https://faceit.ir{{ img.url }}" />
+        {% endblock %}
+        {% block title %}
+            <title>فیسیت{% if page.seo_title %} - {{ page.seo_title }}{% else %} - {{ page.title }}{% endif %}</title>
+        {% endblock %}
+        {% block meta_keywords %}
+        {% endblock %}
+        <meta name="description" content="{{ page.search_description }}">
+        {% block meta_authors %}
+        {% endblock %}
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="{% static 'front/images/favicon.ico' %}" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="{% static 'front/images/apple-touch-icon.png' %}">
+        <link rel="stylesheet" href="{% static 'front/css/one.css' %}">
+        <link rel="stylesheet" href="{% static 'front/css/custom.css' %}">
+        <link rel="stylesheet" href="https://app.najva.com/static/css/local-messaging.css">
+        
+{#        <script async src="{% static 'front/js/vendor/modernizr-2.8.3.min.js' %}"></script>#}
+        <script defer type="text/javascript" src="https://s1.mediaad.org/serve/faceit.ir/loader.js"></script>
+{#        <script defer type="text/javascript">#}
+{#            var head = document.getElementsByTagName("head")[0];#}
+{#            var script = document.createElement("script");#}
+{#            script.type = "text/javascript";#}
+{#            script.async=1;#}
+{#            script.src = "https://s1.mediaad.org/serve/faceit.ir/loader.js" ;#}
+{#            head.appendChild(script);#}
+{#        </script> #}
+<script defer src="https://cdn.yektanet.com/template/bnrs/yn_bnr.min.js"></script>
+<script defer src="https://app.najva.com/static/js/scripts/faceit103-website-8986-ef2408b0-6312-490c-a18b-74a19227edfc.js"></script>
+{#<script defer type="text/javascript">#}
+{#now = new Date();#}
+{#var head = document.getElementsByTagName('head')[0];#}
+{#var script = document.createElement('script');#}
+{#script.async = true;#}
+{#script.type = 'text/javascript';#}
+{#var script_address = 'https://cdn.yektanet.com/template/bnrs/yn_bnr.min.js';#}
+{#script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();#}
+{#head.appendChild(script);#}
+{#</script>#}
+{#<script defer type="text/javascript">#}
+{#            (function(){#}
+{#                var now = new Date();#}
+{#                var version = now.getFullYear().toString() + "0" + now.getMonth() + "0" + now.getDate() +#}
+{#                    "0" + now.getHours();#}
+{##}
+{#                var head = document.getElementsByTagName("head")[0];#}
+{##}
+{#                var link = document.createElement("link");#}
+{#                link.rel = "stylesheet";#}
+{#                link.href = "https://app.najva.com/static/css/local-messaging.css" + "?v=" + version;#}
+{#                head.appendChild(link);#}
+{##}
+{#                var script = document.createElement("script");#}
+{#                script.type = "text/javascript";#}
+{#                script.async = true;#}
+{#                script.src = "https://app.najva.com/static/js/scripts/faceit103-website-8986-ef2408b0-6312-490c-a18b-74a19227edfc.js" + "?v=" + version;#}
+{#                head.appendChild(script);#}
+{#                })()#}
+{#        </script>#}
+    <meta name="google-site-verification" content="fQZz0yu1iDZGLyrjVOZBtcC9peFJYuUVgYI7-YdCG5c" />
+    <!-- Hotjar Tracking Code for https://faceit.ir -->
+<script defer src="https://static.hotjar.com/c/hotjar-600423.js"></script>
+{#<script defer>#}
+{#    (function(h,o,t,j,a,r){#}
+{#        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};#}
+{#        h._hjSettings={hjid:600423,hjsv:6};#}
+{#        a=o.getElementsByTagName('head')[0];#}
+{#        r=o.createElement('script');r.async=1;#}
+{#        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;#}
+{#        a.appendChild(r);#}
+{#    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');#}
+{#</script>#}
+    </head>
+    <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5ZKMB9F"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+        <div class="wrapper">
+            {% include 'front/header.html' %}
+            {% block top_posts %}
+            {% endblock %}
+            <section id="page-content" class="page-wrapper">
+                {% block content %}
+                {% endblock %}
+            </section>
+            {% include 'front/footer.html' %}
+        </div>
+
+
+        <script defer src="{% static 'front/js/one.js' %}"></script>
+    </body>
+</html>

@@ -1,0 +1,166 @@
+{% load static navigation_tags wagtailcore_tags wagtailimages_tags %}
+<header class="header-area header-wrapper bg-white clearfix">
+    <div class="header-top-bar bg-dark ptb-10">
+        <div class="container">
+            <div class="row">
+                <div class="f-right col-xs-12 col-sm-12 col-md-6 col-lg-7  hidden-xs">
+                    <div class="header-top-left">
+                        <nav class="header-top-menu zm-secondary-menu">
+                            <ul>
+                                <li><a href="{{ request.site.root_page.url }}" target="_blank">خانه</a></li>
+                                <li><a href="/ads" target="_blank">تبلیغات در فیسیت</a></li>
+                                <li><a href="/aboutus" target="_blank">درباره‌ی ما</a></li>
+                                <li><a href="/contactus" target="_blank">ارتباط با ما</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-5">
+                    <div class="header-top-right clierfix text-left">
+                        <div class="header-social-bookmark topbar-sblock">
+                            <ul>
+                                {% if settings.front.SocialMedia.facebook_link %}
+                                    <li><a href="{{ settings.front.SocialMedia.facebook_link }}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                {% endif %}
+                                {% if settings.front.SocialMedia.twitter_link %}
+                                    <li><a href="{{ settings.front.SocialMedia.twitter_link }}" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                {% endif %}
+                                {% if settings.front.SocialMedia.instagram_link %}
+                                    <li><a href="{{ settings.front.SocialMedia.instagram_link }}" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                                {% endif %}
+                                {% if settings.front.SocialMedia.aparat_link %}
+                                    <li><a href="{{ settings.front.SocialMedia.aparat_link }}" target="_blank"><img src="{% static 'front/images/aparat.png' %}"></a></li>
+                                {% endif %}
+                                <li><a href="https://faceit.ir/rss-latest" target="_blank"><i class="fa fa-rss"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="zmaga-calendar topbar-sblock">
+                            <span class="calendar uppercase">{{ now|pDate }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-middle-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-lg-4 col-sm-5 col-xs-12 header-mdh f-right">
+                    <div class="global-table">
+                        <div class="global-row">
+                            <div class="global-cell">
+                                <div class="logo">
+                                    <a href="{{ request.site.root_page.url }}">
+                                        <img src="{% static 'front/images/faceitlogo.png' %}" alt="فیسی، رسانه‌ی اخبار دیجیتال"> <h1 class="logo">فیسیت </h1>
+                                    </a> <small class="logo">رسانه اخبار فناوری</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 col-lg-8 col-sm-7 col-xs-12 header-mdh">
+                    <div class="global-table">
+                        <div class="global-row">
+                            <div class="global-cell">
+                                <div class="advertisement text-left">
+                                {% if settings.front.PromotionSettings.top_script %}
+                                    {{ settings.front.PromotionSettings.top_script }}
+                                {% elif settings.front.PromotionSettings.top_img %}
+                                    <a href="{{ settings.front.PromotionSettings.top_url }}" target="_blank">{% image settings.front.PromotionSettings.top_img width-770 %}</a>
+                                {% endif %}
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-bottom-area hidden-sm hidden-xs">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 f-right">
+                    <div class="menu-wrapper bg-theme clearfix">
+                        <div class="row">
+                            <div class="col-md-8  f-right">
+                                <div class="mainmenu-area">
+                                    <nav class="primary-menu f-right">
+                                        <ul class="clearfix">
+                                        {% if settings.front.header.static_header_links %}
+                                            {% for entry in settings.front.header.get_links %}
+                                                {% if entry.link.childs.count > 0 %}
+                                                    <li class="drop"><a href="{{ entry.link.url }}">{{ entry.link }}</a>
+                                                        <ul class="dropdown">
+                                                            {% for child in entry.link.childs.all %}
+                                                                <li><a href="{{ child.link.url }}">{{ child.link }}</a></li>
+                                                            {% endfor %}
+                                                        </ul>
+                                                    </li>
+                                                {% else %}
+                                                    {% if entry.parent_link %}
+                                                    {% else %}
+                                                        <li><a href="{{ entry.link.url }}">{{ entry.link }}</a></li>
+                                                    {% endif %}
+                                                {% endif %}
+                                            {% endfor %}
+                                        {% endif %}
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <div class="search-wrap">
+                                    <div class="search-btn"><i class="fa fa-search"></i></div>
+                                    <div class="search-form">
+                                        <form action="http://faceit.ir/search" method="GET">
+                                            <input type="search" placeholder="جستجو" name="q">
+                                            <button type="submit"><i class='fa fa-search'></i></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-menu-area hidden-md hidden-lg">
+        <div class="fluid-container">
+            <div class="mobile-menu clearfix">
+                <div class="search-wrap mobile-search">
+                    <div class="mobile-search-btn"><i class="fa fa-search"></i></div>
+                    <div class="mobile-search-form">
+                        <form action="/search" method="GET">
+                            <input type="search" placeholder="جستجو" name="query">
+                            <button type="submit"><i class='fa fa-search'></i></button>
+                        </form>
+                    </div>
+                </div>
+                <nav id="mobile_dropdown">
+                    <ul>
+                        {% if settings.front.header.static_header_links %}
+                            {% for entry in settings.front.header.get_links %}
+                                {% if entry.link.childs.count > 0 %}
+                                    <li><a href="{{ entry.link.url }}">{{ entry.link }}</a>
+                                        <ul>
+                                            {% for child in entry.link.childs.all %}
+                                                <li><a href="{{ child.link.url }}">{{ child.link }}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </li>
+                                {% else %}
+                                    {% if entry.parent_link %}
+                                    {% else %}
+                                        <li><a href="{{ entry.link.url }}">{{ entry.link }}</a></li>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>       
+        </div>
+    </div>
+</header>

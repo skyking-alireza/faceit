@@ -1,0 +1,22 @@
+{% load navigation_tags %}
+<article class="zm-trending-post zm-lay-c {% if main %}large{% endif %} zm-single-post" data-dark-overlay="2.5"  data-scrim-bottom="9" data-effict-zoom="1">
+    <div class="zm-post-thumb">
+        {% if main %}
+            {% post_image post 'top-main' %}
+        {% else %}
+            {% post_image post 'top4'%}
+        {% endif %}
+    </div>
+    <div class="zm-post-dis text-white">
+        <div class="zm-category"><a href="{{ post.get_parent.url }}" class="bg-cat-5 cat-btn">{{ post.get_parent.title }}</a></div>
+        <h2 class="zm-post-title"><a href="{{ post.get_url }}">{{ post.title }}</a></h2>
+        <div class="zm-post-meta">
+            <ul>
+                {% for author in post.authors %} 
+                  <li class="s-meta"><a href="{% if author.page %}{{ author.page.url }}{% else %}#{% endif %}" title="" class="zm-author">{{ author }} </a></li>
+                {% endfor %}
+                <li class="s-meta"><a href="#" class="zm-date">{{ post.date_published|pDate }}</a></li>
+            </ul>
+        </div>
+    </div>
+</article>

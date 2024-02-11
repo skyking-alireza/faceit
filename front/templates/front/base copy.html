@@ -1,0 +1,69 @@
+{% load static navigation_tags wagtailcore_tags wagtailimages_tags %}
+<!DOCTYPE html>
+<html lang="fa">
+    <head>
+    <meta name="google-site-verification" content="fQZz0yu1iDZGLyrjVOZBtcC9peFJYuUVgYI7-YdCG5c" />
+        <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5ZKMB9F');</script>
+    <!-- End Google Tag Manager -->
+        <meta charset="UTF-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        {% block title %}
+            <title>فیسیت{% if page.seo_title %} - {{ page.seo_title }}{% else %} - {{ page.title }}{% endif %}</title>
+        {% endblock %}
+        {% block meta_keywords %}
+        {% endblock %}
+        <meta name="description" content="{{ page.search_description }}">
+        {% block meta_authors %}
+        {% endblock %}
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="{% static 'front/images/favicon.ico' %}" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="{% static 'front/images/apple-touch-icon.png' %}">
+        <link rel="stylesheet" href="{% static 'front/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'front/css/core.css' %}">
+        <link rel="stylesheet" href="{% static 'front/css/shortcode/shortcodes.css' %}">
+        <link rel="stylesheet" href="{% static 'front/css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'front/css/responsive.css' %}">
+        <link rel="stylesheet" href="{% static 'front/css/custom.css' %}">
+        <link rel="stylesheet" href="{% static 'front/css/color/color-2.css' %}">
+        <link rel="stylesheet" href="{% static 'front/css/style-customizer.css' %}">
+        <link href="#" data-style="styles" rel="stylesheet">
+        <script src="{% static 'front/js/vendor/modernizr-2.8.3.min.js' %}"></script>
+        <script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/faceit.ir/loader.js" ;
+            head.appendChild(script);
+        </script> 
+    <meta name="google-site-verification" content="fQZz0yu1iDZGLyrjVOZBtcC9peFJYuUVgYI7-YdCG5c" />
+    </head>
+    <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5ZKMB9F"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+        <div class="wrapper">
+            {% include 'front/header.html' %}
+            {% block top_posts %}
+            {% endblock %}
+            <section id="page-content" class="page-wrapper">
+                {% block content %}
+                {% endblock %}
+            </section>
+            {% include 'front/footer.html' %}
+        </div>
+
+
+        <script src="{% static 'front/js/vendor/jquery-1.12.1.min.js' %}"></script>
+        <script src="{% static 'front/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'front/js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'front/js/plugins.js' %}"></script>
+        <script src="{% static 'front/js/main.js' %}"></script>
+    </body>
+</html>

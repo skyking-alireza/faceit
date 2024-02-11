@@ -1,0 +1,23 @@
+{% load navigation_tags %}
+
+<article class="zm-post-lay-a1">
+    <div class="zm-post-thumb">
+        <a href="{{ post.get_url }}" target="_blank">
+        {% if main %}
+            {% post_image post 'top-main'%}
+        {% else %}
+            {% post_image post 'top4' %}
+        {% endif %}
+        </a>
+    </div>
+    <div class="zm-post-dis">
+        <div class="zm-post-header">
+            <h2 class="zm-post-title h2"><a href="{{ post.get_url }}" target="_blank">{{ post.title }}</a></h2>
+        </div>
+        {% if main %}
+        <div class="zm-post-content">
+            <p>{{ post.introduction }} <a href="{{ post.get_url }}" class="more">بیشتر بخوانید</a></p>
+        </div>
+        {% endif %}
+    </div>
+</article>

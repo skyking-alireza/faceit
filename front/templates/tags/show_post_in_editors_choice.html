@@ -1,0 +1,29 @@
+{% load navigation_tags %}
+{% if main %}
+<article class="zm-post-lay-a">
+    <div class="zm-post-thumb">
+        <a href="{{ post.get_url }}" target="_blank">
+            {% post_image post 'top-main'%}
+        </a>
+    </div>
+    <div class="zm-post-dis">
+        <div class="zm-post-header">
+            <h2 class="zm-post-title h2"><a href="{{ post.get_url }}" target="_blank">{{ post.title }}</a></h2>
+        </div>
+        <div class="zm-post-content">
+            <p>{{ post.introduction }} <a href="{{ post.get_url }}" class="more" taget="_blank"> بیشتر بخوانید</a></p>
+        </div>
+    </div>
+</article>
+{% else %}
+<article class="zm-post-lay-d clearfix">
+    <div class="zm-post-thumb f-right">
+        <a href="{{ post.get_url }}" target="_blank">{% post_image post 'sidebar'%}</a>
+    </div>
+    <div class="zm-post-dis f-left">
+        <div class="zm-post-header">
+            <h2 class="zm-post-title"><a href="{{ post.get_url }}" target="_blank">{{ post.title }}</a></h2>
+        </div>
+    </div>
+</article>
+{% endif %}

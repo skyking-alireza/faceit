@@ -1,0 +1,62 @@
+{% load navigation_tags %}
+{% if video_list %}
+<div class="video-post-area ptb-70 bg-dark">
+    <div class="container">
+        <div class="row mb-40">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="section-title">
+                    <h2 class="h6 header-color inline-block uppercase">آخرین ویدیوها</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 pull-right">
+                <div class="zm-video-post-list zm-posts clearfix">
+                    <div class="zm-video-post zm-video-lay-b zm-single-post">
+                        <div class="zm-video-thumb" data-dark-overlay="2.5">
+                            {% post_image last_video %}
+                            <a href="{{ last_video.get_url }}">
+                                <i class="fa fa-play-circle-o"></i>
+                            </a>
+                        </div>
+                        <div class="zm-video-info text-white">
+                            <h2 class="zm-post-title"><a href="{{ last_video.get_url }}">{{ last_video.title}}</a></h2>
+                            <div class="zm-post-meta">
+                                <ul>
+                                    {% for author in last_video.authors %} 
+                                    <li class="s-meta"><a href="{% if author.page %}{{ author.page.url }}{% else %}#{% endif %}" title="" class="zm-author">{{ author }} </a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 sm-mt-70 xs-mt-50 pull-right">
+                <div class="zm-video-post-list layout-c zm-posts zm-scrollbar clearfix mCustomScrollbar _mCS_1 mCS-dir-rtl"><div id="mCSB_1" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" style="max-height: none;" tabindex="0"><div id="mCSB_1_container" class="mCSB_container" style="position:relative; top:0; left:0;" dir="rtl">
+                    {% for video in video_list %}
+                    <div class="zm-video-post zm-video-lay-c zm-single-post clearfix">
+                        <div class="zm-video-thumb pull-right" data-dark-overlay="2.5">
+                            {% post_image video%}
+                            <a href="{{ video.get_url }}">
+                                <i class="fa fa-play-circle-o"></i>
+                            </a>
+                        </div>
+                        <div class="zm-video-info text-white pull-right">
+                            <h2 class="zm-post-title"><a href="{{ video.get_url }}">{{ video.title }}</a></h2>
+                            <div class="zm-post-meta">
+                                <ul>
+                                    {% for author in video.authors %} 
+                                    <li class="s-meta"><a href="{% if author.page %}{{ author.page.url }}{% else %}#{% endif %}" title="" class="zm-author">{{ author }} </a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div><div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-light mCSB_scrollTools_vertical" style="display: block;"><div class="mCSB_draggerContainer"><div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 30px; display: block; height: 318px; max-height: 520px; top: 0px;"><div class="mCSB_dragger_bar" style="line-height: 30px;"></div></div><div class="mCSB_draggerRail"></div></div></div></div></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}

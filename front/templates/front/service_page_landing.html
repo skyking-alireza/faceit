@@ -1,0 +1,118 @@
+{% extends 'front/base.html' %}
+{% load wagtailcore_tags wagtailimages_tags static %}
+{% block content %}
+<div class="alert alert-success">
+  <p>پیام شما با موفقیت <strong>ارسال شد.</strong> در اسرع وقت با شما تماس خواهیم گرفت.</p>
+</div>
+<section id="page-content" class="page-wrapper">
+<div class="zm-section bg-white ptb-30 xs-pt-30">
+    <div class="container">
+        <div class="row">
+        <!-- Start single product -->
+            <div class="col-md-6">
+                <div class="zm-single-product">
+                    <div class="tab-content">
+                        <div id="zm-product-1" class="tab-pane fade in active">
+                            <a href="{{ page.get_url }}" data-lightbox="roadtrip" data-title=" {{ page.title }} ">{% image page.image width-750 %}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+            <!-- End single product -->
+            <div class="col-md-6">
+                <div class="product-details">
+                    <div class="zm-product-dis xs-mt-20">
+                        <h1 class="zm-product-title">{{ page.title }}</h1>
+                        <div class="product-info">
+                            {{ page.body }}
+                        </div>
+                        <div class="product-action">
+                            <ul>
+                                <li>
+                                    <div class="addtocart-btn">
+                                        <a href="#contact">مشاوره و سفارش پروژه</a>
+                                    </div>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 mt-50">
+                <div class="zm-single-info">
+                    <ul class="zm-single-info-nav nav-tab">
+                        <li class="active"><a data-toggle="tab" href="#contact">مشاوره و سفارش پروژه</a></li>
+                        {% if page.resume %}
+                            <li><a data-toggle="tab" href="#resume">سوابق فیسیت</a></li>
+                        {% endif %}
+                    </ul>
+                    <div class="tab-content">
+                    {% if page.resume %}
+                        <div id="resume" class="tab-pane fade">
+                            <p>{{ page.resume|richtext }}
+                        </div>
+                    {% endif %}
+                        <div id="contact" class="tab-pane fade in active">
+                            <div class="tab-pane fade active in" id="review">
+                                <div class="custom-container">
+                                    <div class="row">
+                                        <div class="col-md-5 pull-right">
+                                        <h3>به ما پیام بدهید</h3>
+                                        {% if page.whatsapp_link %}
+                                        <div class="service-call service-whatsapp">
+                                        <a href="{{ page.whatsapp_link }}">
+                                            <img src={% static 'front/icons/whatsapp.webp' %}>
+                                        </a>
+                                        </div>
+                                        {% endif %}
+                                        {% if page.telegram_link %}
+                                        <div class="service-call service-telegram">
+                                        <a href="{{ page.telegram_link }}">
+                                            <img src={% static 'front/icons/telegram.png' %}>
+                                        </a>
+                                        </div>
+                                        {% endif %}
+                                        {% if page.phone_number %}
+                                        <div class="service-call">
+                                        <a href="tel:{{ page.phone_number }}">
+                                            <strong>{{ page.phone_number }}</strong>
+                                            <img src={% static 'front/icons/call4.png' %} style="background:transparent;">
+                                        </a>
+                                        </div>
+                                        {% endif %}
+
+                                </div>
+                                <div class="col-md-7 pull-right">
+                                <div id="review_form">
+                                    <div class="comment-respond">
+                                        <h3 class="comment-reply-title">تیم فیسیت چطور می‌تواند به شما کمک کند؟</h3>
+                        <form action="{% pageurl page %}" calss="comment-form" method="post">
+                        {% csrf_token %}
+                        
+                                {% for field in form %}
+        {{ field.errors }}
+        {{ field.label_tag }} {{ field }}
+        {% if forloop.last %}
+            <button class="submit-button mt-20" type="submit"> ارسال پیام </button>
+        {% endif %}
+{% endfor %}
+</form>
+
+                                    </div>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                                <!-- end -->
+                                </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+{% endblock %}

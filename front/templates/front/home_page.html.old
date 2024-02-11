@@ -1,0 +1,52 @@
+{% extends "front/base.html" %}
+{% block top_posts %}
+  {% include 'front/top_posts.html' %}
+{% endblock %}
+{% load static navigation_tags wagtailcore_tags wagtailimages_tags %}
+{% block content %}
+    <div class="zm-section bg-white pt-30 xs-pt-30 sm-pt-30 pb-40">
+        <div class="container">
+            <div class="row">
+                {% include 'front/home_post_list.html' %}
+                {% include 'front/sidebar.html'%}
+            </div>
+            <div class="row hidden-xs">
+                <div class="zm-pagination-wrap mt-70">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <nav class="zm-pagination ptb-40 text-center">
+                                    <ul class="page-numbers">
+                                        {% if posts.has_previous %}
+                                            <li><a class="prev  page-numbers" href="?page={{ posts.paginator.previous_page_number }}" >قبلی</a></li>
+                                        {% endif %}
+                                        {% for page_num in page_range %}
+                                            <li>{% if page_num != posts.number %}<a class="page-numbers" href="?page={{ page_num }}">{{ page_num }}</a>
+                                            {% else %}
+                                            <span class="page-numbers current">{{ page_num }}</span>{% endif %}</li>
+                                        {% endfor %}
+                                        {% if posts.has_next %}
+                                            <li><a class="next  page-numbers" href="?page={{ posts.next_page_number }}">بعدی</a></li>
+                                        {% endif %}
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% if settings.front.PromotionSettings.bottom_script %}
+                    {{ settings.front.PromotionSettings.bottom_script }}
+            {% elif settings.front.PromotionSettings.bottom_img %}
+                <div class="advertisement">
+                    <div class="row mt-40">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                            <a href="{{ settings.front.PromotionSettings.bottom_url }}">{% image settings.front.PromotionSettings.bottom_img width-770 %}</a>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    {% include "front/video_list.html" %}
+{% endblock %}

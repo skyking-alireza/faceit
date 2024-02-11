@@ -1,0 +1,72 @@
+{% extends 'front/base2.html' %}
+{% load wagtailcore_tags %}
+{% block content %}
+
+<section id="page-content" class="page-wrapper">
+            <!-- Start contact address area  -->
+            <div class="zm-section bg-white ptb-65">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6 col-lg-4 col-sm-8 f-right">
+                            <div class="section-title-2 mb-40">
+                                <h2 class="inline-block uppercase">{{ page.title }}</h2>
+                                <p>{{ page.intro|richtext }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                            <div class="col-md-4 col-sm-4 ">
+                                </div>
+
+                       
+                        <div class="col-md-4 col-sm-4 xs-mt-30 ">
+                            <div class="single-address text-center">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <h4 class="uppercase">ایمیل</h4>
+                                <p><a href="mailto:info@faceit.ir" target="_top">info@faceit.ir</a></p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 xs-mt-30 ">
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End contact address area  -->
+            <!-- Start contact message area -->
+            <div class="zm-section bg-white pt-60 pb-40">
+                <div class="container">
+                    <div class="row">
+                        <div class=" col-md-4 f-right">
+                            <div class="section-title-2 mb-40">
+                                <h3 class="inline-block uppercase">نظراتتان را برای ما ارسال کنید</h3>
+                                <p>نظرات / پیشنهادات و انتقادات خود را برای ما ارسال کنید .</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="message-box">
+                        <form action="{% pageurl page %}" id="contact-form" method="post">
+                        {% csrf_token %}
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-12 f-right">
+                                {% for field in form %}
+                                {% if forloop.last %}
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                {% endif %}
+        {{ field.errors }}
+        {{ field.label_tag }} {{ field }}
+        {% if forloop.last %}
+            <button class="submit-button" type="submit"> ارسال پیام </button>
+        {% endif %}
+{% endfor %}
+                                   
+                                </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- End contact message area -->
+        </section>
+{% endblock %}

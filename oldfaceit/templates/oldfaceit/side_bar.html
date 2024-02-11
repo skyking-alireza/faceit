@@ -1,0 +1,127 @@
+{% load static navigation_tags wagtailcore_tags wagtailimages_tags %}
+<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+    <div class="sidebar">
+    {% if settings.front.PromotionSettings.left_top_img %}
+    <div class="widget">
+        <div class="banner-spot clearfix">
+            <div class="banner-img">
+                <a href="{{ settings.front.PromotionSettings.left_top_url }}">
+                    {% image settings.front.PromotionSettings.left_top_img fill-300x600 class="img-fluid" %}
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% if settings.front.SideBar.unorganized_panel_show %}
+    <div class="widget">
+        <h2 class="widget-title">{{ settings.front.SideBar.unorganized_panel_title }}</h2>
+        <div class="blog-list-widget">
+            <div class="list-group">
+                {% for entry in settings.front.SideBar.get_unorganized_panel %}
+                <a href="{{ entry.url }}" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="w-100 justify-content-between">
+                        {% image entry.image max-120x90 class="img-fluid float-left" %}
+                        <h5 class="mb-1">{{ entry.title }}</h5>
+                        <small>{{ entry.date_published|pDate }}</small>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% for panel in settings.front.SideBar.get_panels %}
+        {% if panel.view_type == "media" %}
+        <div class="widget">
+            <h2 class="widget-title">{{ panel.title }}</h2>
+            <div class="trend-videos">
+            {% for post in panel.get_posts %}
+                <div class="blog-box">
+                    <div class="post-media">
+                        <a href="{{ post.url }}">
+                            {% image post.image max-120x90 class="img-fluid" %}
+                            <div class="hovereffect">
+                                <span class="videohover"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-meta">
+                        <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        {% if panel.view_type == "list"%}
+        <div class="widget">
+            <h2 class="widget-title">{{ panel.title }}</h2>
+            <div class="blog-list-widget">
+                <div class="list-group">
+                {% for post in panel.get_posts %}
+                <a href="{{ post.url }}" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="w-100 justify-content-between">
+                        {% image post.image max-120x90 class="img-fluid float-left" %}
+                        <h5 class="mb-1">{{ post.title }}</h5>
+                        <small>{{ post.date_published|pDate }}</small>
+                    </div>
+                </a>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+    <div class="widget">
+        <h2 class="widget-title">در شبکه‌های اجتماعی همراه ما باشید</h2>
+        <div class="row text-center">
+        {% if settings.front.SocialMedia.facebook_link %}
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                <a href="{{ settings.front.SocialMedia.facebook_link }}" class="social-button facebook-button">
+                    <i class="fa fa-facebook"></i>
+                    <p>{{ settings.front.SocialMedia.facebook_followers }}</p>
+                </a>
+            </div>
+        {% endif %}
+        {% if settings.front.SocialMedia.instagram_link %}
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                <a href="{{ settings.front.SocialMedia.instagram_link }}" class="social-button instagram-button">
+                    <i class="fa fa-instagram"></i>
+                    <p>{{ settings.front.SocialMedia.instagram_followers }}</p>
+                </a>
+            </div>
+        {% endif %}
+        {% if settings.front.SocialMedia.twitter_link %}
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                <a href="{{ settings.front.SocialMedia.twitter_link }}" class="social-button twitter-button">
+                    <i class="fa fa-twitter"></i>
+                    <p>{{ settings.front.SocialMedia.twitter_followers }}</p>
+                </a>
+            </div>
+        {% endif %}
+        {% if settings.front.SocialMedia.aparat_link %}
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                <a href="{{ settings.front.SocialMedia.aparat_link }}" class="social-button youtube-button">
+                    <i class="fa fa-youtube"></i>
+                    <p>{{ settings.front.SocialMedia.aparat_followers }}</p>
+                </a>
+            </div>
+        {% endif %}               
+        </div>
+    </div>
+    {% if settings.front.PromotionSettings.left_bottom_img %}
+        <div class="widget">
+            <div class="banner-spot clearfix">
+                <div class="banner-img">
+                    <a href="{{ settings.front.PromotionSettings.left_bottom_url }}">
+                        {% image settings.front.PromotionSettings.left_bottom_img fill-1200x1200 class="img-fluid" %}
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    </div>
+</div>
+</div>
+</div>
+</section>
