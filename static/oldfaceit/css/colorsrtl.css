@@ -1,0 +1,11 @@
+/* 1 of 29 CSS properties converted by rtl.daskhat.ir 
+ These properties should be override originals. 
+ just load rtl css file after original css file.*/ 
+
+/* body {direction:rtl;} */
+
+.blockquote{
+    border-right-color: #3197d6;
+}
+
+

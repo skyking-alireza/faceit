@@ -5,7 +5,7 @@ from django.utils.html import strip_tags
 
 from .forms import SubscribeForm, CommentForm
 from .models import Subscribers, Comment, PostPage, SearchQuery, Robots
-from wagtail.search.models import Query
+from wagtail.contrib.search_promotions.models import Query
 from datetime import datetime
 import json
 # Create your views here.

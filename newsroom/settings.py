@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 
+import newsroom.wsgi
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -28,15 +30,13 @@ ALLOWED_HOSTS = ['localhost','nr.faceit.ir','faceit.ir','www.faceit.ir']
 
 
 # Application definition
-
 INSTALLED_APPS = [
-    'oldfaceit',
+    'oldfaceit.apps.EditorialConfig',
     'front',
     'editorial',
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
     'wagtail.contrib.settings',
-    # 'wagtail.contrib.modeladmin',
     'wagtail.embeds',
     'wagtail.sites',
     'wagtail.users',
@@ -44,25 +44,22 @@ INSTALLED_APPS = [
     'wagtail.documents',
     'wagtail.images',
     'wagtail.search',
+    'wagtail.admin',
     'wagtail',
-    'modelcluster',
+    'django_gravatar',
     'taggit',
-
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',
-    'django_gravatar',
     'django.contrib.sitemaps',
 ]
-
 MIDDLEWARE = [
-    'wagtail.core.middleware.SiteMiddleware',
+    'wagtail.middleware.SiteMiddleware',
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
-#    'wagtail.contrib.modeladmin.middleware.ModelAdminMiddleware',
+    'wagtail.contrib.middleware.ModelAdminMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -91,7 +88,8 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'newsroom.wsgi.application'
+WSGI_APPLICATION = newsroom.wsgi.application
+
 
 
 # Database
@@ -102,16 +100,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'c2nrfaceit',
         'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-    },
-    'faceitold': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'c2faceitdb',
-        'USER': 'root',
         'PASSWORD': 'As75357636@',
         'HOST': 'localhost',
-    }
+    },
 }
 DATABASE_ROUTERS = ['front.dbRouter.defDBRouter', 'oldfaceit.dbRouter.OldDBRouter']
 

@@ -1,0 +1,57 @@
+/* 11 of 76 CSS properties converted by rtl.daskhat.ir 
+ These properties should be override originals. 
+ just load rtl css file after original css file.*/ 
+
+/* body {direction:rtl;} */
+
+@media (max-width: 989px){
+    .center-side,   .left-side,   .right-side{
+        float: right;
+    }
+
+}
+
+@media (max-width: 768px){
+    .blog-list .blog-meta.big-meta h4{
+        margin-right: 0;
+    }
+
+}
+
+@media (max-width: 728px){
+    .center-side,   .left-side,   .right-side{
+        float: right;
+    }
+
+}
+
+@media (min-width: 992px){
+    .header .navbar-nav .has-submenu > ul{
+        right: 0;
+    }
+
+    .header .navbar-nav .has-submenu > ul.start-right{
+        left: 0;
+        right: auto;
+    }
+
+    .header .navbar-nav .has-submenu > ul li:hover > ul{
+        right: 100%;
+    }
+
+    .header .navbar-nav .has-submenu > ul li:hover > ul.show-right{
+        left: 100%;
+    }
+
+    .header .navbar-nav .has-submenu > ul li ul{
+        right: 130%;
+    }
+
+    .header .navbar-nav .has-submenu > ul li ul.show-right{
+        left: 130%;
+        right: auto;
+    }
+
+}
+
+

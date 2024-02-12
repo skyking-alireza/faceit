@@ -1,0 +1,39 @@
+/* 8 of 103 CSS properties converted by rtl.daskhat.ir 
+ These properties should be override originals. 
+ just load rtl css file after original css file.*/ 
+
+/* body {direction:rtl;} */
+
+.first-slot{
+    float: right;
+}
+
+.last-slot, .second-slot{
+    float: right;
+}
+
+.blog-top .fa{
+    padding-right: 10px;
+}
+
+.fa-star{
+    margin: 0 0 0 -2px ;
+}
+
+.blog-meta small.firstsmall:after{
+    padding-right: 0;
+}
+
+.pp .float-right{
+    margin-right: 2rem;
+}
+
+.btn, .page-link:hover, .page-link:focus, .btn:hover, .btn:focus{
+    background: rgba(0, 0, 0, 0) linear-gradient(to left #0091e5 right 0px, #00b7e5 100%) repeat scroll right  0 !important;
+}
+
+.tag-cloud-single span, .navbar-inverse{
+    background: rgba(0, 0, 0, 0) linear-gradient(to left #0091e5 right 0px, #00b7e5 100%) repeat scroll right  0 !important;
+}
+
+

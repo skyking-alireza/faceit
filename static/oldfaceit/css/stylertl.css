@@ -1,0 +1,244 @@
+/* 76 of 800 CSS properties converted by rtl.daskhat.ir 
+ These properties should be override originals. 
+ just load rtl css file after original css file.*/ 
+
+/* body {direction:rtl;} */
+
+.blockquote{
+    background: #fff none repeat scroll right  0;
+    border-right: 4px solid #eceeef;
+}
+
+.dropdown-toggle::after{
+    margin-right: 0.5em;
+}
+
+.navbar-toggleable-md .navbar-nav .nav-link{
+    padding-right: 0.8rem;
+    padding-left: 0.8rem;
+}
+
+.header .dropdown-item span{
+    left: 20px;
+}
+
+.topsocial .fa{
+    margin-left: 0.5rem;
+}
+
+.topmenu i{
+    padding-left: 0.3rem;
+}
+
+.dropdown-menu.megamenu{
+    right: 0;
+    left: 0;
+}
+
+.menucat{
+    right: 0;
+}
+
+div.tab{
+    float: right;
+    border-left: 1px solid #e1e3e6;
+}
+
+div.tab button{
+    text-align: left;
+}
+
+div.tab button:hover, div.tab button.active{
+    border-left: 0 solid #e1e3e6;
+    border-right: 0 solid #e1e3e6;
+}
+
+.tabcontent{
+    float: right;
+    border-right: medium none;
+}
+
+.center-side, .left-side, .right-side{
+    float: right;
+}
+
+.small-box{
+    float: right;
+}
+
+.dmtop{
+    background-position: 50% 50%;
+    left: 25px;
+}
+
+.breadcrumb{
+    text-align: left;
+}
+
+.page-link{
+    margin-right: 6px;
+}
+
+.page-item:first-child .page-link{
+    margin-right: 0;
+}
+
+.page-title small{
+    padding-right: 0.5rem;
+}
+
+.page-title i{
+    margin-left: 0.3rem;
+}
+
+.tag-cloud-single span{
+    background: #ddd none repeat scroll right  0;
+    margin-left: 0.5rem !important;
+}
+
+.tw-button i, .fb-button i{
+    margin-left: 0.5rem;
+}
+
+.blog-title-area .breadcrumb{
+    text-align: right;
+}
+
+.tag-cloud-single a, .comments-list .media-right, .comments-list small{
+    padding-right: 10px;
+}
+
+.comments-list img{
+    margin-left: 30px;
+}
+
+.prevnextpost .float-right{
+    margin-right: 1rem;
+}
+
+.prevnextpost .float-left{
+    margin-left: 1rem;
+}
+
+.small-title{
+    background: #edeff2 none repeat scroll right  0;
+    right: 5%;
+}
+
+.pp{
+    padding-right: 5%;
+    padding-left: 5%;
+}
+
+.pp .float-left{
+    margin: 0 -3rem 1rem 2rem ;
+}
+
+.check li:before{
+    padding-left: 0.5rem;
+}
+
+.banner-spot{
+    background: #edeff2 url("images/ads-bg.png") no-repeat scroll center left / auto 0%;
+}
+
+.blog-meta small{
+    margin-left: 0.5rem;
+}
+
+.blog-meta small:after{
+    padding-right: 1rem;
+}
+
+.shadoweffect{
+    right: 0;
+    left: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 100% rgba(0, 0, 0, 0.1) 30%);
+}
+
+.hovereffect{
+    right: 0;
+    left: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 100% rgba(0, 0, 0, 0.1) 50%);
+}
+
+.hovereffect span::before{
+    right: 0;
+    left: 0;
+}
+
+.blog-list .blog-meta.big-meta h4{
+    margin-left: 0;
+    width:inherit;
+    text-align:justify;
+}
+
+.blog-custom-build .blog-meta{
+    border-radius: 3px 3px 0 0;
+}
+
+.sidebar .instagram-wrapper a{
+    float: right;
+    border-left: 5px solid #ffffff;
+}
+
+.form-wrapper .form-control{
+    background: #fff none repeat scroll right  0;
+}
+
+.form-wrapper .btn i{
+    padding-right: 0.5rem;
+}
+
+.search-form .form-control{
+    border-left: 0;
+}
+
+.search-form .btn:hover, .search-form .btn:focus, .search-form .btn{
+    left: 0;
+    margin-right: 0;
+}
+
+.blog-list-widget img{
+    background: #fff none repeat scroll right  0;
+    margin-left: 15px;
+}
+
+.newsletter-widget .form-inline .form-control{
+    padding-right: 1.5rem;
+}
+
+.card-block{
+    background: #202020 none repeat scroll right  0;
+}
+
+.top-search .btn:hover, .top-search .btn:focus, .top-search .btn{
+    left: 4%;
+    border-right: 1px solid #555555 !important;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.top-search .newsletter-widget .form-inline .form-control{
+    background: rgba(0, 0, 0, 0) none repeat scroll right  0;
+}
+
+.newsletter-widget .btn i{
+    padding-right: 0.5rem;
+}
+
+.link-widget li span{
+    left: 0;
+}
+
+#preloader{
+    left: 0;
+    right: 0;
+}
+
+.preloader{
+    right: 1%;
+    left: 1%;
+}
+
+

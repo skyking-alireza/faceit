@@ -2,7 +2,6 @@
 
 import datetime
 from django.db import migrations, models
-from django.utils.timezone import utc
 
 
 class Migration(migrations.Migration):
@@ -15,7 +14,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='comment',
             name='date',
-            field=models.DateTimeField(default=datetime.datetime(2019, 11, 21, 10, 27, 45, 508412, tzinfo=utc)),
+            field=models.DateTimeField(default=datetime.datetime(2019, 11, 21, 10, 27, 45, 508412)),
         ),
         migrations.AlterField(
             model_name='socialmedia',

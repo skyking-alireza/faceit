@@ -1,7 +1,7 @@
 from oldfaceit.models import Listposts, Listposts2, OldPost, Categories,Users, CategoriesObjectXref, OldCat, OldPeople, Question
 from front.models import PostIndexPage, PostPage, PostAuthors, PostPageTag, Comment
 from editorial.models import People
-from wagtail.core.rich_text import RichText
+from wagtail.rich_text import RichText
 
 all_cats = OldCat.objects.all()
 for cat in all_cats:

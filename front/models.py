@@ -4,13 +4,11 @@ from django.core.exceptions import ValidationError
 from django.db import models
 from django import forms
 from django.urls import reverse
-from django.contrib import messages
 from django.shortcuts import redirect, render, get_object_or_404
 from django.utils import timezone
-from wagtail.admin.panels import FieldPanel,FieldRowPanel,MultiFieldPanel,InlinePanel,PageChooserPanel
+from wagtail.admin.panels import FieldPanel,MultiFieldPanel,InlinePanel,PageChooserPanel
 from wagtail.contrib.settings.models import BaseSiteSetting
 from wagtail.contrib.settings.models import register_setting
-from django.contrib.contenttypes.fields import GenericRelation
 from wagtail.fields import RichTextField, StreamField
 from wagtail.models import Page, Orderable
 from wagtail.snippets.models import register_snippet

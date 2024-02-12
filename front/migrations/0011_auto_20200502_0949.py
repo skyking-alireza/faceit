@@ -4,8 +4,8 @@ from django.db import migrations, models
 import django.db.models.deletion
 import modelcluster.contrib.taggit
 import modelcluster.fields
-import wagtail.core.blocks
-import wagtail.core.fields
+import wagtail.blocks
+import wagtail.fields
 import wagtail.embeds.blocks
 import wagtail.images.blocks
 
@@ -42,7 +42,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='promotionsettings',
             name='header_left_script',
-            field=wagtail.core.fields.StreamField([('rawScript', wagtail.core.blocks.RawHTMLBlock())], blank=True, null=True, verbose_name='header left script'),
+            field=wagtail.fields.StreamField([('rawScript', wagtail.blocks.RawHTMLBlock())], blank=True, null=True, verbose_name='header left script'),
         ),
         migrations.AddField(
             model_name='promotionsettings',
@@ -57,7 +57,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='promotionsettings',
             name='header_right_script',
-            field=wagtail.core.fields.StreamField([('rawScript', wagtail.core.blocks.RawHTMLBlock())], blank=True, null=True, verbose_name='header right Ad script'),
+            field=wagtail.fields.StreamField([('rawScript', wagtail.blocks.RawHTMLBlock())], blank=True, null=True, verbose_name='header right Ad script'),
         ),
         migrations.AddField(
             model_name='promotionsettings',
@@ -72,7 +72,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='promotionsettings',
             name='home1_script',
-            field=wagtail.core.fields.StreamField([('rawScript', wagtail.core.blocks.RawHTMLBlock())], blank=True, null=True, verbose_name='Home1 script'),
+            field=wagtail.fields.StreamField([('rawScript', wagtail.blocks.RawHTMLBlock())], blank=True, null=True, verbose_name='Home1 script'),
         ),
         migrations.AddField(
             model_name='promotionsettings',
@@ -87,7 +87,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='promotionsettings',
             name='home2_script',
-            field=wagtail.core.fields.StreamField([('rawScript', wagtail.core.blocks.RawHTMLBlock())], blank=True, null=True, verbose_name='Home2 script'),
+            field=wagtail.fields.StreamField([('rawScript', wagtail.blocks.RawHTMLBlock())], blank=True, null=True, verbose_name='Home2 script'),
         ),
         migrations.AddField(
             model_name='promotionsettings',
@@ -102,7 +102,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='promotionsettings',
             name='home3_script',
-            field=wagtail.core.fields.StreamField([('rawScript', wagtail.core.blocks.RawHTMLBlock())], blank=True, null=True, verbose_name='Home3 script'),
+            field=wagtail.fields.StreamField([('rawScript', wagtail.blocks.RawHTMLBlock())], blank=True, null=True, verbose_name='Home3 script'),
         ),
         migrations.AddField(
             model_name='promotionsettings',
@@ -112,21 +112,21 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='promotionsettings',
             name='list2_script',
-            field=wagtail.core.fields.StreamField([('rawScript', wagtail.core.blocks.RawHTMLBlock())], blank=True, null=True, verbose_name='List2 Ad script'),
+            field=wagtail.fields.StreamField([('rawScript', wagtail.blocks.RawHTMLBlock())], blank=True, null=True, verbose_name='List2 Ad script'),
         ),
         migrations.AddField(
             model_name='promotionsettings',
             name='newspage_sidebar_script',
-            field=wagtail.core.fields.StreamField([('rawScript', wagtail.core.blocks.RawHTMLBlock())], blank=True, null=True, verbose_name='Newspage sidebar Script'),
+            field=wagtail.fields.StreamField([('rawScript', wagtail.blocks.RawHTMLBlock())], blank=True, null=True, verbose_name='Newspage sidebar Script'),
         ),
         migrations.CreateModel(
             name='ServicePage',
             fields=[
                 ('page_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='wagtailcore.Page')),
-                ('intro', wagtail.core.fields.RichTextField(blank=True)),
-                ('thank_you_text', wagtail.core.fields.RichTextField(blank=True)),
-                ('body', wagtail.core.fields.StreamField([('rawHTML', wagtail.core.blocks.RawHTMLBlock()), ('heading_block', wagtail.core.blocks.StructBlock([('heading_text', wagtail.core.blocks.CharBlock(classname='title', required=True)), ('size', wagtail.core.blocks.ChoiceBlock(blank=True, choices=[('', 'Select a header size'), ('h2', 'H2'), ('h3', 'H3'), ('h4', 'H4')], required=False))])), ('paragraph_block', wagtail.core.blocks.RichTextBlock(icon='fa-paragraph', template='blocks/paragraph_block.html')), ('aparat', wagtail.core.blocks.CharBlock(template='blocks/aparat.html')), ('image_block', wagtail.core.blocks.StructBlock([('image', wagtail.images.blocks.ImageChooserBlock(required=True)), ('caption', wagtail.core.blocks.CharBlock(required=False)), ('attribution', wagtail.core.blocks.CharBlock(required=False))])), ('block_quote', wagtail.core.blocks.StructBlock([('text', wagtail.core.blocks.TextBlock()), ('attribute_name', wagtail.core.blocks.CharBlock(blank=True, label='e.g. Mary Berry', required=False))])), ('embed_block', wagtail.embeds.blocks.EmbedBlock(help_text='Insert an embed URL e.g https://www.youtube.com/embed/SGJFWirQ3ks', icon='fa-s15', template='blocks/embed_block.html'))], blank=True, null=True, verbose_name='Page body')),
-                ('resume', wagtail.core.fields.RichTextField(blank=True, null=True, verbose_name='Resume')),
+                ('intro', wagtail.fields.RichTextField(blank=True)),
+                ('thank_you_text', wagtail.fields.RichTextField(blank=True)),
+                ('body', wagtail.fields.StreamField([('rawHTML', wagtail.blocks.RawHTMLBlock()), ('heading_block', wagtail.blocks.StructBlock([('heading_text', wagtail.blocks.CharBlock(classname='title', required=True)), ('size', wagtail.blocks.ChoiceBlock(blank=True, choices=[('', 'Select a header size'), ('h2', 'H2'), ('h3', 'H3'), ('h4', 'H4')], required=False))])), ('paragraph_block', wagtail.blocks.RichTextBlock(icon='fa-paragraph', template='blocks/paragraph_block.html')), ('aparat', wagtail.blocks.CharBlock(template='blocks/aparat.html')), ('image_block', wagtail.blocks.StructBlock([('image', wagtail.images.blocks.ImageChooserBlock(required=True)), ('caption', wagtail.blocks.CharBlock(required=False)), ('attribution', wagtail.blocks.CharBlock(required=False))])), ('block_quote', wagtail.blocks.StructBlock([('text', wagtail.blocks.TextBlock()), ('attribute_name', wagtail.blocks.CharBlock(blank=True, label='e.g. Mary Berry', required=False))])), ('embed_block', wagtail.embeds.blocks.EmbedBlock(help_text='Insert an embed URL e.g https://www.youtube.com/embed/SGJFWirQ3ks', icon='fa-s15', template='blocks/embed_block.html'))], blank=True, null=True, verbose_name='Page body')),
+                ('resume', wagtail.fields.RichTextField(blank=True, null=True, verbose_name='Resume')),
                 ('phone_number', models.CharField(blank=True, max_length=64, null=True)),
                 ('whatsapp_link', models.URLField(blank=True, null=True)),
                 ('telegram_link', models.URLField(blank=True, null=True)),

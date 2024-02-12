@@ -2,8 +2,8 @@
 
 from django.db import migrations, models
 import django.db.models.deletion
-import wagtail.core.blocks
-import wagtail.core.fields
+import wagtail.blocks
+import wagtail.fields
 
 
 class Migration(migrations.Migration):
@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='promotionsettings',
             name='left_bottom_script',
-            field=wagtail.core.fields.StreamField([('rawScript', wagtail.core.blocks.RawHTMLBlock())], blank=True, null=True, verbose_name='Left Bottom Ad script'),
+            field=wagtail.fields.StreamField([('rawScript', wagtail.blocks.RawHTMLBlock())], blank=True, null=True, verbose_name='Left Bottom Ad script'),
         ),
         migrations.AddField(
             model_name='promotionsettings',
@@ -27,7 +27,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='promotionsettings',
             name='news_bottom1_script',
-            field=wagtail.core.fields.StreamField([('rawScript', wagtail.core.blocks.RawHTMLBlock())], blank=True, null=True, verbose_name='News Buttom1 Ad script'),
+            field=wagtail.fields.StreamField([('rawScript', wagtail.blocks.RawHTMLBlock())], blank=True, null=True, verbose_name='News Buttom1 Ad script'),
         ),
         migrations.AddField(
             model_name='promotionsettings',
@@ -42,7 +42,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='promotionsettings',
             name='news_bottom2_script',
-            field=wagtail.core.fields.StreamField([('rawScript', wagtail.core.blocks.RawHTMLBlock())], blank=True, null=True, verbose_name='News Buttom2 Ad script'),
+            field=wagtail.fields.StreamField([('rawScript', wagtail.blocks.RawHTMLBlock())], blank=True, null=True, verbose_name='News Buttom2 Ad script'),
         ),
         migrations.AddField(
             model_name='promotionsettings',

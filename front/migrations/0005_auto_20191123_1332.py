@@ -2,7 +2,6 @@
 
 import datetime
 from django.db import migrations, models
-from django.utils.timezone import utc
 
 
 class Migration(migrations.Migration):
@@ -15,11 +14,11 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='comment',
             name='date',
-            field=models.DateTimeField(default=datetime.datetime(2019, 11, 23, 13, 32, 43, 467655, tzinfo=utc)),
+            field=models.DateTimeField(default=datetime.datetime(2019, 11, 23, 13, 32, 43, 467655)),
         ),
         migrations.AlterField(
             model_name='postpage',
             name='date_published',
-            field=models.DateField(blank=True, default=datetime.datetime(2019, 11, 23, 13, 32, 43, 471437, tzinfo=utc), null=True, verbose_name='Date article published'),
+            field=models.DateField(blank=True, default=datetime.datetime(2019, 11, 23, 13, 32, 43, 471437), null=True, verbose_name='Date article published'),
         ),
     ]

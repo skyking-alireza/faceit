@@ -3,8 +3,8 @@
 from django.db import migrations, models
 import django.db.models.deletion
 import modelcluster.fields
-import wagtail.core.blocks
-import wagtail.core.fields
+import wagtail.blocks
+import wagtail.fields
 
 
 class Migration(migrations.Migration):
@@ -19,8 +19,8 @@ class Migration(migrations.Migration):
             name='ContactPage',
             fields=[
                 ('page_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='wagtailcore.Page')),
-                ('intro', wagtail.core.fields.RichTextField(blank=True)),
-                ('thank_you_text', wagtail.core.fields.RichTextField(blank=True)),
+                ('intro', wagtail.fields.RichTextField(blank=True)),
+                ('thank_you_text', wagtail.fields.RichTextField(blank=True)),
                 ('phone', models.CharField(blank=True, max_length=31, null=True)),
                 ('address', models.TextField(blank=True, null=True)),
                 ('email', models.EmailField(blank=True, max_length=254, null=True)),
@@ -33,27 +33,27 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='promotionsettings',
             name='bottom_script',
-            field=wagtail.core.fields.StreamField([('rawScript', wagtail.core.blocks.RawHTMLBlock())], blank=True, null=True, verbose_name='Bottom Ad script'),
+            field=wagtail.fields.StreamField([('rawScript', wagtail.blocks.RawHTMLBlock())], blank=True, null=True, verbose_name='Bottom Ad script'),
         ),
         migrations.AddField(
             model_name='promotionsettings',
             name='left_top_script',
-            field=wagtail.core.fields.StreamField([('rawScript', wagtail.core.blocks.RawHTMLBlock())], blank=True, null=True, verbose_name='Left Top Ad script'),
+            field=wagtail.fields.StreamField([('rawScript', wagtail.blocks.RawHTMLBlock())], blank=True, null=True, verbose_name='Left Top Ad script'),
         ),
         migrations.AddField(
             model_name='promotionsettings',
             name='list_script',
-            field=wagtail.core.fields.StreamField([('rawScript', wagtail.core.blocks.RawHTMLBlock())], blank=True, null=True, verbose_name='List Ad script'),
+            field=wagtail.fields.StreamField([('rawScript', wagtail.blocks.RawHTMLBlock())], blank=True, null=True, verbose_name='List Ad script'),
         ),
         migrations.AddField(
             model_name='promotionsettings',
             name='news_script',
-            field=wagtail.core.fields.StreamField([('rawScript', wagtail.core.blocks.RawHTMLBlock())], blank=True, null=True, verbose_name='News Ad script'),
+            field=wagtail.fields.StreamField([('rawScript', wagtail.blocks.RawHTMLBlock())], blank=True, null=True, verbose_name='News Ad script'),
         ),
         migrations.AddField(
             model_name='promotionsettings',
             name='top_script',
-            field=wagtail.core.fields.StreamField([('rawScript', wagtail.core.blocks.RawHTMLBlock())], blank=True, null=True, verbose_name='Top Ad script'),
+            field=wagtail.fields.StreamField([('rawScript', wagtail.blocks.RawHTMLBlock())], blank=True, null=True, verbose_name='Top Ad script'),
         ),
         migrations.AlterField(
             model_name='authorpage',

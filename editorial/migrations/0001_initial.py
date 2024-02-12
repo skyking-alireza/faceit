@@ -2,7 +2,7 @@
 
 from django.db import migrations, models
 import django.db.models.deletion
-import wagtail.core.fields
+import wagtail.fields
 import wagtail.search.index
 
 
@@ -22,7 +22,7 @@ class Migration(migrations.Migration):
                 ('first_name', models.CharField(max_length=254, verbose_name='First name')),
                 ('last_name', models.CharField(max_length=254, verbose_name='Last name')),
                 ('job_title', models.CharField(blank=True, max_length=254, verbose_name='Job title')),
-                ('bio', wagtail.core.fields.RichTextField(blank=True, verbose_name='Bio')),
+                ('bio', wagtail.fields.RichTextField(blank=True, verbose_name='Bio')),
                 ('instagram_link', models.URLField(blank=True)),
                 ('facebook_link', models.URLField(blank=True)),
                 ('twitter_link', models.URLField(blank=True)),
